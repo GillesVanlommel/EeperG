@@ -17,5 +17,5 @@
   .container {
     position: fixed;
     background-color: aquamarine;
-    wi
+    width: fit-content;
   }
