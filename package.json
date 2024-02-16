@@ -4,13 +4,21 @@
   "description": "receptjes",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
+=======
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> 89709eb8f8203326beceab922b13e4843b2c7ee5
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
