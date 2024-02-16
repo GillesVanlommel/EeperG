@@ -1,0 +1,85 @@
+[
+  {
+    "Recept": {
+      "Naam": "Nasi Goreng",
+      "Prijs": "None",
+      "Aantal Personen": 4,
+      "Ingredienten": {
+        "Rijst": 300,
+        "Ui": 1,
+        "knoflook": 1,
+        "Paprika": 2,
+        "Prei": 200,
+        "Ketjap": "Scheut",
+        "Champignons": 250,
+        "Sambal": "Theelepel",
+        "Ei": 4
+      },
+      "Stappen": [
+        "Kook de rijst volgens de verpakking",
+        "Snij de ui, knoflook, paprika en prei in stukjes",
+        "Bak de ui en knoflook in een wokpan",
+        "Voeg de paprika en prei toe",
+        "Voeg de champignons toe",
+        "Voeg de ketjap en sambal toe",
+        "Voeg de rijst toe",
+        "Bak de eieren en voeg deze toe aan de nasi"
+      ],
+      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2016/07/nasi-goreng-recept.jpg"
+    }
+  },
+  {
+    "Recept": {
+      "Naam": "Spaghetti Bolognese",
+      "Prijs": "None",
+      "Aantal Personen": 3,
+      "Ingredienten": {
+        "Spaghetti": 300,
+        "Ui": 1,
+        "Knoflook": 2,
+        "Rundergehakt": 500,
+        "Tomatenpuree": "Blikje",
+        "Tomatensaus": "Fles",
+        "Wortel": 2,
+        "Bleekselderij": 2,
+        "Oregano": "Theelepel",
+        "Basilicum": "Handvol",
+        "Parmezaanse kaas": "Naar smaak"
+      },
+      "Stappen": [
+        "Kook de spaghetti volgens de verpakking",
+        "Snij de ui, knoflook, wortel en bleekselderij in stukjes",
+        "Bak het rundergehakt in een pan",
+        "Voeg de ui, knoflook, wortel en bleekselderij toe",
+        "Voeg de tomatenpuree en tomatensaus toe",
+        "Voeg de oregano en basilicum toe",
+        "Laat de saus sudderen",
+        "Serveer de saus over de gekookte spaghetti en garneer met Parmezaanse kaas"
+      ],
+      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2019/06/spaghetti-bolognese_b-1.jpg"
+    }
+  },
+  {
+    "Recept": {
+      "Naam": "Pasta Pesto",
+      "Prijs": "None",
+      "Aantal Personen": 2,
+      "Ingredienten": {
+        "Pasta": 200,
+        "Pesto": "Potje",
+        "Cherrytomaatjes": 200,
+        "Pijnboompitten": "Handvol",
+        "Parmezaanse kaas": "Naar smaak"
+      },
+      "Stappen": [
+        "Kook de pasta volgens de verpakking",
+        "Snij de cherrytomaatjes doormidden",
+        "Rooster de pijnboompitten in een droge koekenpan",
+        "Meng de pasta met de pesto",
+        "Voeg de cherrytomaatjes en pijnboompitten toe",
+        "Garneer met Parmezaanse kaas"
+      ],
+      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2022/07/Pasta-met-kip-pesto-recept.jpg"
+    }
+  }
+]

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= recept.Naam %> Details
+  </title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+  <h1>
+    <%= recept.Naam %> Details
+  </h1>
+  <h2>Stappen:</h2>
+  <ol>
+    <% recept.Stappen.forEach(step=> { %>
+      <li>
+        <%= step %>
+      </li>
+      <% }); %>
+  </ol>
+  <img src=<%= recept.Foto %> alt="foto van het gerecht"> <br>
+  <a href="/recipes">Back to Recipe List</a>
+</body>
+
+</html>

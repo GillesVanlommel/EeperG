@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe List</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+  <h1>Recipe List</h1>
+  <ul>
+    <% recipes.forEach(recipe=> { %>
+      <li>
+        <a href="/recipes/<%= recipe.Recept.Naam %>">
+          <%= recipe.Recept.Naam %>
+        </a>
+      </li>
+      <% }); %>
+  </ul>
+
+  <a href="/recipeAdd.html" class="button">
+    klik om recept toe te voegen
+  </a>
+
+
+</body>
+
+</html>

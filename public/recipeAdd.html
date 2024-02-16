@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the add a recipe place</h1>
+    <form action="/recipes/add" method="post">
+        <input type="text" name="Naam" placeholder="Naam"> <br>
+        <input type="text" name="Prijs" placeholder="Prijs"> <br>
+        <input type="text" name="Aantal Personen" placeholder="Aantal Personen"> <br>
+        <input type="text" name="Ingredienten" placeholder="Ingredienten"> <br>
+        <textarea name="Stappen" id="" cols="30" rows="10"></textarea> <br>
+        <input type="text" name="Foto" placeholder="Foto url"> <br>
+
+        <!-- TODO: fiks andere manier hier, nu gaat het csv gewijs zijn
+        ma da moe mogelijk zijn om me js daar echt stap 1, 2 en dan een "add stap" knop
+        te zetten -->
+
+        <input type="submit" value="Voeg toe!">
+    </form>
+</body>
+</html>
