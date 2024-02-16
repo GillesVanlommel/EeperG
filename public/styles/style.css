@@ -1,9 +1,10 @@
 body {
-  background-image: url("https://png.pngtree.com/background/20230519/original/pngtree-there-are-many-different-bowls-of-food-on-the-table-picture-image_2662515.jpg");
+  background-image: url("https://www.foodiesfeed.com/wp-content/uploads/2023/09/healthy-food.jpg");
   background-size: cover;
   margin: 0 0px;
   height: 100vh;
   width: 100vw;
+  color: white;
 }
 
 .main {
@@ -47,7 +48,7 @@ body {
 
   .openSpace {
     text-align: right;
-    height: 500px;
+    height: 400px;
   }
 
   .blurOverlay {
@@ -56,26 +57,25 @@ body {
   }
 
   .overlay {
-    background-color: rgb(0, 0, 0);
+    position: relative;
+    background-color: rgba(0, 0, 0);
     height: 1000px;
     width: 100%;
-    display: flex;
-  }
-
-  .overlayItem1 {
-    flex:  0.6; 
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 150px;
+    padding-top: 50px;
+    padding-left: 50px;
+    mix-blend-mode:multiply;
+    color: #ffffff;
   }
 
   .overlayItem2 {
-    padding-top: 50px;
-    flex:  0.3;
+    position: absolute;
+    padding-top: 100px;
+    top: 550px;
+    right: 50px;
     text-align: right;
     size: 50 50px;
-  }
-
-  #welcomeText {
-    padding-left: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 80px;
-    color: #ffffff;
+    z-index: 1;
   }
