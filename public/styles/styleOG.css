@@ -7,10 +7,15 @@ body {
   color: white;
 }
 
+.main {
+  display: grid;
+}
+
 #recipeButton {
   border: 3px solid #3e3f3f;
   width: 100px;
   height: 100px;
+  background-image: url("https://static.thenounproject.com/png/162924-200.png");
 }
 
 .button {
@@ -40,34 +45,15 @@ body {
     justify-content:space-around;
   }
 
-  .main {
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 300px;
-  }
 
-  
-  .left {
+  .openSpace {
     text-align: right;
-    padding-top: 30%;
-    flex: 0.60;
+    height: 400px;
   }
 
-  .middle {
-    background: linear-gradient(to left, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0));
-    flex: 0.05;
-    padding-top: 30%;
-  }
-
-  .right {
-    background: rgb(0, 0, 0);
-    flex: 0.35;
-    mix-blend-mode:multiply;
-    color: #ffffff;
-    padding-top: 30%;
+  .blurOverlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0));
+    height: 120px;
   }
 
   .overlay {
