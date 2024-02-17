@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/styleDetailPage.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <title> <%= recept.Naam %> </title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/styleDetailPage.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>
+    <%= recept.Naam %>
+  </title>
 </head>
+
 <body>
   <div class="main">
     <div class="top">
       <img src="<%=recept.Foto %>" alt="">
+      <a href="/recipes">Back</a>
       <div class="fadebox"></div>
     </div>
     <div class="infobox">
-      <i class="fa-solid fa-person" style="color: rgb(66, 214, 101); font-size: 30px;"></i> <%= recept.personen%>
-      <% if (recept.tags.includes("vegan")) { %>
-        <i class="fa-solid fa-leaf" style="color: rgb(66, 214, 101); font-size: 30px;"></i> Vegan
-      <% } %>
+      <i class="fa-solid fa-person" style="color: rgb(66, 214, 101); font-size: 30px;"></i>
+      <%= recept.personen%>
+        <% if (recept.tags.includes("vegan")) { %>
+          <i class="fa-solid fa-leaf" style="color: rgb(66, 214, 101); font-size: 30px;"></i> Vegan
+          <% } %>
     </div>
     <div class="bottom">
       <div class="ingredientbox">
-        <div class="ingrBox">
-          <div class="ingrAmount"><strong>#</strong></div>
+        <div class="ingrBox" style="border-bottom: 2px solid rgb(71, 70, 70);">
+          <div class="ingrAmount" ><strong>#</strong></div>
           <div class="ingrName"><strong>Ingrediënt</strong></div>
         </div>
-          <% for (const key in recept.Ingredienten) { %>
-            <div class="ingrBox">
-              <div class="ingrAmount">
-                <%= recept.Ingredienten[key] %>
-              </div>
-              <div class="ingrName">
-                <%= key %>
-              </div>
+        <% for (const key in recept.Ingredienten) { %>
+          <div class="ingrBox">
+            <div class="ingrAmount">
+              <%= recept.Ingredienten[key] %>
             </div>
+            <div class="ingrName">
+              <%= key %>
+            </div>
+          </div>
           <% } %>
       </div>
-      <div class="stepsbox"> Stappen
-        <ol>
+      <div class="stepsbox">
+        <div>
+          <span class="stepTitle">
+            <u>
+              Stappen
+            </u>
+          </span>
+        </div>
+        <ol class="stepList">
           <% recept.Stappen.forEach(step=> { %>
             <li>
               <%= step %>
@@ -48,8 +61,8 @@
         </ol>
       </div>
     </div>
-    <a href="/recipes">Back to Recipe List</a>
   </div>
 </body>
+
 </html>
 <%- include("../partial/footer") %>
