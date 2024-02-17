@@ -1,9 +1,32 @@
 [
   {
     "Recept": {
+      "Naam": "Karton met gefrituurde kalk",
+      "Prijs": "None",
+      "personen": 2.5,
+      "Ingredienten": {
+        "Cement": 10,
+        "Zwavelzuur": "Nipje",
+        "knoflook": 1,
+        "wc water": "emmer",
+        "karton met wasco": "0.5m²"
+      },
+      "Stappen": [
+        "los karton op in water",
+        "voeg zwavelzuur toe aan de karton",
+        "giet de cement in de pombak",
+        "proef of je kartonmengsel zout nodig heeft",
+        "val neer"
+      ],
+      "Foto": "https://cdn.pixabay.com/photo/2016/12/15/20/21/texture-1909992_1280.jpg",
+      "tags": ["vegan"]
+    }
+  },
+  {
+    "Recept": {
       "Naam": "Nasi Goreng",
       "Prijs": "None",
-      "Aantal Personen": 4,
+      "personen": 4,
       "Ingredienten": {
         "Rijst": 300,
         "Ui": 1,
@@ -25,14 +48,15 @@
         "Voeg de rijst toe",
         "Bak de eieren en voeg deze toe aan de nasi"
       ],
-      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2016/07/nasi-goreng-recept.jpg"
+      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2016/07/nasi-goreng-recept.jpg",
+      "tags": ["vegan"]
     }
   },
   {
     "Recept": {
       "Naam": "Spaghetti Bolognese",
       "Prijs": "None",
-      "Aantal Personen": 3,
+      "personen": 3,
       "Ingredienten": {
         "Spaghetti": 300,
         "Ui": 1,
@@ -63,7 +87,7 @@
     "Recept": {
       "Naam": "Pasta Pesto",
       "Prijs": "None",
-      "Aantal Personen": 2,
+      "personen": 2,
       "Ingredienten": {
         "Pasta": 200,
         "Pesto": "Potje",

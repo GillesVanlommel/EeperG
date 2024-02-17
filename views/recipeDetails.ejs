@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <%= recept.Naam %> Details
-  </title>
-  <link rel="stylesheet" href="/styles/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/styleDetailPage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title> <%= recept.Naam %> </title>
 </head>
-
 <body>
-  <h1>
-    <%= recept.Naam %> Details
-  </h1>
-  <h2>Stappen:</h2>
-  <ol>
-    <% recept.Stappen.forEach(step=> { %>
-      <li>
-        <%= step %>
-      </li>
-      <% }); %>
-  </ol>
-  <img src=<%= recept.Foto %> alt="foto van het gerecht"> <br>
-  <a href="/recipes">Back to Recipe List</a>
+  <div class="main">
+    <div class="top">
+      <img src="<%=recept.Foto %>" alt="">
+      <div class="fadebox"></div>
+    </div>
+    <div class="infobox">
+      <i class="fa-solid fa-person" style="color: rgb(66, 214, 101); font-size: 30px;"></i> <%= recept.personen%>
+      <% if (recept.tags.includes("vegan")) { %>
+        <i class="fa-solid fa-leaf" style="color: rgb(66, 214, 101); font-size: 30px;"></i> Vegan
+      <% } %>
+    </div>
+    <div class="bottom">
+      <div class="ingredientbox">
+        <div class="ingrBox">
+          <div class="ingrAmount"><strong>#</strong></div>
+          <div class="ingrName"><strong>Ingrediënt</strong></div>
+        </div>
+          <% for (const key in recept.Ingredienten) { %>
+            <div class="ingrBox">
+              <div class="ingrAmount">
+                <%= recept.Ingredienten[key] %>
+              </div>
+              <div class="ingrName">
+                <%= key %>
+              </div>
+            </div>
+          <% } %>
+      </div>
+      <div class="stepsbox"> Stappen
+        <ol>
+          <% recept.Stappen.forEach(step=> { %>
+            <li>
+              <%= step %>
+            </li>
+            <% }); %>
+        </ol>
+      </div>
+    </div>
+    <a href="/recipes">Back to Recipe List</a>
+  </div>
 </body>
-
 </html>
+<%- include("../partial/footer") %>
