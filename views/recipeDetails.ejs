@@ -20,17 +20,40 @@
       <a href="/recipes">Back</a>
       <div class="fadebox"></div>
     </div>
+
+
+
     <div class="infobox">
-      <i class="fa-solid fa-person" style="color: rgb(66, 214, 101); font-size: 30px;"></i>
-      <%= recept.personen%>
+      <div class="tagsbox">
+        <i class="fa-solid fa-person">
+          <%= recept.personen%>
+        </i>
         <% if (recept.tags.includes("vegan")) { %>
-          <i class="fa-solid fa-leaf" style="color: rgb(66, 214, 101); font-size: 30px;"></i> Vegan
-          <% } %>
+            <i class="fa-solid fa-leaf">
+              Vegan
+            </i>
+          <% }
+        %>
+      </div>
+
+      <div class="sharebox">
+        <a href="/sharepage">
+          <i class="fa-solid fa-pen"></i>
+        </a>
+        <a href="/">
+          <i class="fa-solid fa-share-nodes"></i>
+        </a>
+      </div>
     </div>
+
+
+
+
+
     <div class="bottom">
       <div class="ingredientbox">
         <div class="ingrBox" style="border-bottom: 2px solid rgb(71, 70, 70);">
-          <div class="ingrAmount" ><strong>#</strong></div>
+          <div class="ingrAmount"><strong>#</strong></div>
           <div class="ingrName"><strong>Ingrediënt</strong></div>
         </div>
         <% for (const key in recept.Ingredienten) { %>
