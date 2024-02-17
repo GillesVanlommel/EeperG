@@ -80,7 +80,9 @@
         "Laat de saus sudderen",
         "Serveer de saus over de gekookte spaghetti en garneer met Parmezaanse kaas"
       ],
-      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2019/06/spaghetti-bolognese_b-1.jpg"
+      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2019/06/spaghetti-bolognese_b-1.jpg",
+      "tags": ["vegan"]
+
     }
   },
   {
@@ -103,7 +105,9 @@
         "Voeg de cherrytomaatjes en pijnboompitten toe",
         "Garneer met Parmezaanse kaas"
       ],
-      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2022/07/Pasta-met-kip-pesto-recept.jpg"
+      "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2022/07/Pasta-met-kip-pesto-recept.jpg",
+      "tags": ["vegan"]
+
     }
   }
 ]
