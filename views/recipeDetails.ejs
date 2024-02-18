@@ -25,57 +25,56 @@
 
     <div class="infobox">
       <div class="tagsbox">
-
         <% if (recept.tags.includes("vegan")) { %>
-          <div id="separator"><img src="../vegan.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../vegan.png" title="Vegan" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("ei")) { %>
-          <div id="separator"><img src="../ei.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../ei.png" title="Ei" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("gluten")) { %>
-          <div id="separator"><img src="../gluten.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../gluten.png" title="Gluten" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("lupine")) { %>
-          <div id="separator"><img src="../lupine.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../lupine.png" title="Lupine" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("melk")) { %>
-          <div id="separator"><img src="../melk.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../melk.png" title="Melk" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("sesamzaad")) { %>
-          <div id="separator"><img src="../sesamzaad.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../sesamzaad.png" title="Sesamzaad" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("noten")) { %>
-          <div id="separator"><img src="../noten.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../noten.png" title="Noten" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("zwaveldioxide")) { %>
-          <div id="separator"><img src="../zwaveldioxide.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../zwaveldioxide.png" title="Zwaveldioxide" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("selderij")) { %>
-          <div id="separator"><img src="../selderij.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../selderij.png" title="Selderij" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("pinda")) { %>
-          <div id="separator"><img src="../pinda.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../pinda.png" title="Pinda" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("mosterd")) { %>
-          <div id="separator"><img src="../mosterd.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../mosterd.png" title="Mosterd" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("vis")) { %>
-          <div id="separator"><img src="../vis.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../vis.png" title="Vis" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("weekdieren")) { %>
-          <div id="separator"><img src="../weekdieren.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../weekdieren.png" title="Weekdieren" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("soja")) { %>
-          <div id="separator"><img src="../soja.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../soja.png" title="Soja" id="icon"></div>
         <% } %>
         <% if (recept.tags.includes("schaaldieren")) { %>
-          <div id="separator"><img src="../schaaldieren.png" alt="" id="icon"></div>
+          <div id="separator"><img src="../schaaldieren.png" title="Schaaldieren" id="icon"></div>
         <% } %>
       </div>
 
       <div class="sharebox">
-        <i class="fa-solid fa-pen" onclick="openPopup('edit-container')"></i>
-        <i class="fa-solid fa-share-nodes" onclick="openPopup('share-container')"></i>
+        <div id="separator"><img src="../edit.png" onclick="openPopup('edit-container')" id="icon" title="Bewerken"></div>
+        <div id="separator"><img src="../delen.png" onclick="openPopup('share-container')" id="icon" title="Delen"></div>
       </div>
     </div>
 
@@ -119,9 +118,7 @@
     </div>
   </div>
 </body>
+</html>
 <!-- PopUps -->
 <%- include("../partial/sharePopUp.ejs") %>
   <%- include("../partial/editPopUp.ejs") %>
-
-</html>
-<%- include("../partial/footer") %>
