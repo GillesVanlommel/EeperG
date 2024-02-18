@@ -15,65 +15,100 @@ body {
     height: 100vh;
     width: 100vw;
     color: white;
+    justify-content: center;
 }
 .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+.gridContainer {
+    place-items: center;
     height: 100vh;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 450px;
     grid-gap: 20px;
 }
 .topBar {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color:var(--accent_kleur_4);
     font-size: 40px;
-
-    height: 100px;
+    background-color: var(--primaire_kleur);
+    border-bottom: 4px solid var(--secundaire_kleur);
+    box-shadow: 0 0 0 2px var(--accent_kleur_1);
+    height: 80px;
     width: 100%;
     display: flex;
 }
 .zoekBalk {
-    background-color: aqua;
+    text-align: left;
     flex: 0.7;
 }
 .filter {
-    background-color: blueviolet;
-    flex: 0.2;
+    flex: 0.3;
 }
-.NOGIETS {
-    background-color: chartreuse;
-    flex: 0.1;
-}
-
+#dropdown { /*TODO: Waarom is die filterbar zo fokking lang*/
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--secundaire_kleur);
+    background-color: var(--primaire_kleur);
+    color: var(--tekst_kleur_2);
+    font-size: 16px;
+  }
 .receptTile {
-    border: 2px solid var(--accent_kleur_4);
+    background-color: var(--secundaire_kleur);
     border-radius: 10px;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .receptImg {
-    height: 60%;
+    padding-top: 20px;
+    padding-left: 20px; /*TODO: hardcode, geen enkele align wil de foto centreren wordt zot*/
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent_kleur_2);
+    height: 55%;
+    width: 300px;
 }
 .receptImg img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
 }
 .receptName {
     border-radius: 0px 0px 10px 10px;
-    background-color: var(--secundaire_kleur);
-    height: 40%;
+    height: 35%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     text-align: center;
     padding-left: 10px;
+    padding-right: 10px;
     color: var(--tekst_kleur_2)
 }
-
-.addTile {
-    border: 2px solid var(--accent_kleur_4);
+.editbox {
     text-align: center;
+    height: 10%;
+}
+#icon {
+    width: 25px;
+    height: 25px;
+}
+.addTile {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 180px;
+    text-align: center;
+    align-items: center; /*TODO: plus teken ni int midde*/
     height: 100%;
     width: 100%;
-    background-color: var(--secundaire_kleur);   
+    border-radius: 10px;
+    background-color: var(--accent_kleur_1);   
 }

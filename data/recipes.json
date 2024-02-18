@@ -29,7 +29,23 @@
         "Neem een moment om te ontspannen en geniet van je creatie. Laat jezelf neervallen en bewonder het resultaat van je harde werk."
       ],
       "Foto": "https://belmansrecycling.be/wp-content/uploads/Belmans-Recycling-Materiaux-Papier-et-Carton.jpg",
-      "tags": ["vegan", "ei", "gluten", "lupine", "melk", "sesamzaad", "noten", "zwaveldioxide", "selderij", "pinda", "mosterd", "vis", "weekdieren", "soja", "schaaldieren"]
+      "tags": [
+        "vegan",
+        "ei",
+        "gluten",
+        "lupine",
+        "melk",
+        "sesamzaad",
+        "noten",
+        "zwaveldioxide",
+        "selderij",
+        "pinda",
+        "mosterd",
+        "vis",
+        "weekdieren",
+        "soja",
+        "schaaldieren"
+      ]
     }
   },
   {
@@ -92,7 +108,6 @@
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2019/06/spaghetti-bolognese_b-1.jpg",
       "tags": []
-
     }
   },
   {
@@ -125,25 +140,25 @@
       "Prijs": "",
       "personen": 2,
       "Ingredienten": {
-        "prinsessenboontjes":"200 g",
+        "prinsessenboontjes": "200 g",
         "bicarbonaat": "-",
-        "krielaardappelen":"600 g",
+        "krielaardappelen": "600 g",
         "olijfolie": "-",
         "grof zout": "-",
         "peper": "-",
-        "knoflook":"2 tenen",
-        "rozemarijn":"1 takje",
+        "knoflook": "2 tenen",
+        "rozemarijn": "1 takje",
         "boter": "-",
-        "varkenshaasje ong. 800 g":"1",
-        "bruine fond":"2 dl",
-        "oesterzwammen":"250 g",
-        "sjalotten":"2",
-        "look":"1 teentje",
-        "rode wijn":"2 dl",
-        "tijm":"enkele takjes",
-        "laurier":"enkele blaadjes",
-        "room":"1 dl",
-        "gezouten spek":"8 plakjes"
+        "varkenshaasje ong. 800 g": "1",
+        "bruine fond": "2 dl",
+        "oesterzwammen": "250 g",
+        "sjalotten": "2",
+        "look": "1 teentje",
+        "rode wijn": "2 dl",
+        "tijm": "enkele takjes",
+        "laurier": "enkele blaadjes",
+        "room": "1 dl",
+        "gezouten spek": "8 plakjes"
       },
       "Stappen": [
         "Haal het vlees uit de koelkast en laat het op kamertemperatuur komen.",
@@ -172,22 +187,28 @@
         "Snijd het rosé gebakken varkenshaasje in dikke schijfjes. Schik er enkele op elk bord en serveer met de krieltjes en de in spek gerolde boontjes. Werk af met de saus van oesterzwammen."
       ],
       "Foto": "https://images.vrt.be/dako2017_1600s_j75/2019/03/15/37878604-4713-11e9-abcc-02b7b76bf47f.jpg",
-      "tags": ["melk"] 
+      "tags": [
+        "melk"
+      ]
     }
   },
   {
     "Recept": {
-      "Naam": "Waifu Thighs",
+      "Naam": "Stress test",
       "Prijs": "None",
       "personen": 3,
       "Ingredienten": {
         "Cake": "inf"
       },
       "Stappen": [
-        "aneki yamero onigaishimasu"
+        "bruh"
       ],
-      "Foto": "https://i.pinimg.com/236x/55/0f/be/550fbe88ec502c2d213a95d9c703e7a5.jpg",
-      "tags": ["vegan","melk","noten"]
+      "Foto": "https://media.tenor.com/q-CmztRV07QAAAAe/cat-cat-meme.png",
+      "tags": [
+        "vegan",
+        "melk",
+        "noten"
+      ]
     }
   }
 ]

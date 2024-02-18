@@ -13,23 +13,35 @@
   <div class="zoekBalk"> 
     <%- include("../partial/searchBar.ejs") %>
   </div>
-  <div class="filter"> FILTERS</div>
-  <div class="NOGIETS">IDK</div>
+  <div class="filter">
+    <select id="dropdown">
+      <option value="">AUGGG</option>
+      <option value="Deez nuts">Deez nuts</option>
+      <option value="the">the</option>
+    </select>
+  </div>
 </div>
 <div class="main">
-  <% recipes.forEach(recipe=> { %>
-    <div class="receptTile" onclick="window.location.href = '/recipes/<%= recipe.Recept.Naam %>'">
-      <div class="receptImg">
-        <img src="<%=recipe.Recept.Foto %>" id="foto">
+  <div class="gridContainer">
+    <% recipes.forEach(recipe=> { %>
+      <div class="receptTile" onclick="window.location.href = '/recipes/<%= recipe.Recept.Naam %>'">
+        <div class="receptImg">
+          <img src="<%=recipe.Recept.Foto %>" id="foto">
+        </div>
+        <div class="receptName">
+          <%= recipe.Recept.Naam %>
+        </div>
+        <div class="editbox">
+          <img src="/icons/edit.png" onclick="openPopup('edit-container')" id="icon" title="Bewerken">
+          <img src="/icons/trash.png" onclick="openPopup('edit-container')" id="icon" title="Verwijder">
+        </div>
       </div>
-      <div class="receptName">
-        <%= recipe.Recept.Naam %>
-      </div>
+    <% }); %>
+    <div class="addTile" onclick="window.location.href = '/recipeAdd.html'">
+      <p>+</p>
     </div>
-  <% }); %>
-  <div class="addTile" >
-    +
   </div>
 </div>
 </body>
 </html>
+<!-- TODO: dit ga slecht: <%- include("../partial/editPopUp.ejs") %> --> 
