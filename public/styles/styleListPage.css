@@ -4,40 +4,76 @@
     --accent_kleur_1: rgb(66, 214, 101);
     --accent_kleur_2: rgb(220, 216, 216);
     --accent_kleur_3: rgba(0, 0, 0, 0);
+    --accent_kleur_4: rgb(0, 0, 0);
     --tekst_kleur_1: rgb(255, 255, 255);
     --tekst_kleur_2: rgb(90, 90, 90);
   }
 
-  body {
-    background-image: url("https://www.foodiesfeed.com/wp-content/uploads/2023/09/healthy-food.jpg");
+body {
     background-size: cover;
     margin: 0 0px;
     height: 100vh;
     width: 100vw;
     color: white;
-  }
-  
-  .main {
-    background-color: aqua;
+}
+.main {
     height: 100vh;
-    width: 100vw;
-  }
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+.topBar {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:var(--accent_kleur_4);
+    font-size: 40px;
 
-  .receptTile {
-    display: flex;
-    height: max-content;
-    min-height: 1000;
+    height: 100px;
     width: 100%;
+    display: flex;
+}
+.zoekBalk {
+    background-color: aqua;
+    flex: 0.7;
+}
+.filter {
     background-color: blueviolet;
-  }
-  .receptImg {
-    background-color: burlywood;
     flex: 0.2;
-  }
-  .receptName {
-    background-color: deeppink;
-    flex: 0.8;
+}
+.NOGIETS {
+    background-color: chartreuse;
+    flex: 0.1;
+}
+
+.receptTile {
+    border: 2px solid var(--accent_kleur_4);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+.receptImg {
+    height: 60%;
+}
+.receptImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+.receptName {
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--secundaire_kleur);
+    height: 40%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
-    color: var(--accent_kleur_2)
-  }
+    text-align: center;
+    padding-left: 10px;
+    color: var(--tekst_kleur_2)
+}
+
+.addTile {
+    border: 2px solid var(--accent_kleur_4);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--secundaire_kleur);   
+}

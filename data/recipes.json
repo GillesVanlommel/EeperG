@@ -59,7 +59,7 @@
         "Bak de eieren en voeg deze toe aan de nasi"
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2016/07/nasi-goreng-recept.jpg",
-      "tags": ["vegan"]
+      "tags": []
     }
   },
   {
@@ -91,7 +91,7 @@
         "Serveer de saus over de gekookte spaghetti en garneer met Parmezaanse kaas"
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2019/06/spaghetti-bolognese_b-1.jpg",
-      "tags": ["vegan"]
+      "tags": []
 
     }
   },
@@ -116,7 +116,78 @@
         "Garneer met Parmezaanse kaas"
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2022/07/Pasta-met-kip-pesto-recept.jpg",
-      "tags": ["vegan"]
+      "tags": []
+    }
+  },
+  {
+    "Recept": {
+      "Naam": "Varkenshaasje met groene arsperge en patatjes",
+      "Prijs": "",
+      "personen": 2,
+      "Ingredienten": {
+        "prinsessenboontjes":"200 g",
+        "bicarbonaat": "-",
+        "krielaardappelen":"600 g",
+        "olijfolie": "-",
+        "grof zout": "-",
+        "peper": "-",
+        "knoflook":"2 tenen",
+        "rozemarijn":"1 takje",
+        "boter": "-",
+        "varkenshaasje ong. 800 g":"1",
+        "bruine fond":"2 dl",
+        "oesterzwammen":"250 g",
+        "sjalotten":"2",
+        "look":"1 teentje",
+        "rode wijn":"2 dl",
+        "tijm":"enkele takjes",
+        "laurier":"enkele blaadjes",
+        "room":"1 dl",
+        "gezouten spek":"8 plakjes"
+      },
+      "Stappen": [
+        "Haal het vlees uit de koelkast en laat het op kamertemperatuur komen.",
+        "Verwarm de oven voor tot 200 °C.",
+        "Maak de boontjes schoon en knijp de topjes eraf.",
+        "Breng water aan de kook met bicarbonaat en kook de boontjes op enkele minuten beetgaar. Giet af en spoel onder koud water om de garing te stoppen.",
+        "Was de krieltjes, snijd ze doormidden en verzamel ze in een ovenschaal. Besprenkel met olijfolie. Breng de aardappelen verder op smaak met grof zout en peper.",
+        "Kneus en pel de knoflook. Doe de gekneusde tenen bij de krieltjes.",
+        "Hak de rozemarijn fijn en voeg toe.",
+        "Schuif de ovenschaal in de voorverwarmde oven, gedurende 30 minuten. Verwarm ook een tweede ovenschaal, voor het vlees straks.",
+        "Giet de boontjes af, spoel onder koud stromend water en laat uitlekken.",
+        "Smelt een klont boter in een pan.",
+        "Kruid het varkenshaasje met peper en grof zout. Bak het vlees 2 minuten langs beide zijden op een matig vuur. Geef het enkel een beetje kleur en korst.",
+        "Haal de tweede ovenschaal uit de warme oven en leg er het varkenshaasje in. Bak het vlees verder in de oven, gedurende 10 minuten.",
+        "Giet het bakvet uit de pan en maak de pan schoon met keukenpapier.",
+        "De champignonroom",
+        "Verwarm de bruine fond. Je kan ook zelf fond klaarmaken.",
+        "Smelt een verse klont boter in de schoongemaakte pan. Scheur de oesterzwammen in stukken en bak ze in de vetstof.",
+        "Pel de sjalotten en snijd ze in ringen. Kneus en pel de knoflook. Snipper de teen en plet met een mes. Doe de sjalot en look bij de champignons.",
+        "Bevochtig met rode wijn. Breng verder op smaak met fijngehakte tijm en enkele blaadjes laurier. Laat de wijn volledig uitkoken.",
+        "Blus met de warme bruine fond. Doe er de room bij en laat op een laag vuur inkoken.",
+        "Afwerken en serveren",
+        "Rol een busseltje boontjes in 2 plakjes spek. Leg de busseltjes in een ingevette ovenschaal.",
+        "Zet de boontjes in de oven tot het spek gebakken is.",
+        "Haal het varkenshaasje uit de oven. Wikkel het in aluminiumfolie en laat minstens 10 minuten rusten.",
+        "Snijd het rosé gebakken varkenshaasje in dikke schijfjes. Schik er enkele op elk bord en serveer met de krieltjes en de in spek gerolde boontjes. Werk af met de saus van oesterzwammen."
+      ],
+      "Foto": "https://images.vrt.be/dako2017_1600s_j75/2019/03/15/37878604-4713-11e9-abcc-02b7b76bf47f.jpg",
+      "tags": ["melk"] 
+    }
+  },
+  {
+    "Recept": {
+      "Naam": "Waifu Thighs",
+      "Prijs": "None",
+      "personen": 3,
+      "Ingredienten": {
+        "Cake": "inf"
+      },
+      "Stappen": [
+        "aneki yamero onigaishimasu"
+      ],
+      "Foto": "https://i.pinimg.com/236x/55/0f/be/550fbe88ec502c2d213a95d9c703e7a5.jpg",
+      "tags": ["vegan","melk","noten"]
     }
   }
 ]

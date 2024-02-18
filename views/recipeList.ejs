@@ -9,25 +9,25 @@
 </head>
 
 <body>
-<h1>Recipe List</h1>
+<div class="topBar">
+  <div class="zoekBalk"> ZOEKBALK</div>
+  <div class="filter"> FILTERS</div>
+  <div class="NOGIETS">IDK</div>
+</div>
 <div class="main">
   <% recipes.forEach(recipe=> { %>
-    <div class="receptTile">
+    <div class="receptTile" onclick="window.location.href = '/recipes/<%= recipe.Recept.Naam %>'">
       <div class="receptImg">
-        <img src="" alt="">
+        <img src="<%=recipe.Recept.Foto %>" id="foto">
       </div>
       <div class="receptName">
-        <a href="/recipes/<%= recipe.Recept.Naam %>">
-          <%= recipe.Recept.Naam %>
-        </a>
+        <%= recipe.Recept.Naam %>
       </div>
     </div>
   <% }); %>
+  <div class="addTile" >
+    +
+  </div>
 </div>
-
-<a href="/recipeAdd.html" class="button">
-  klik om recept toe te voegen
-</a>
 </body>
-
 </html>
