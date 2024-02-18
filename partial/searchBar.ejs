@@ -1,4 +1,83 @@
-<div>
+<div id="searchDiv">
     <input type="text" id="searchInput" placeholder="Search...">
     <ul id="searchResults"></ul>
+    <script>
+        // Access the JSON data passed from the server
+        const recipes = <%- JSON.stringify(recipes) %>;
+
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        // Event listener for input changes
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            // Clear previous search results
+            searchResults.innerHTML = '';
+
+            // let's not search if the search term is empty
+            if (searchTerm === '') {
+                return;
+            }
+            // Filter and display matching results
+            const filteredResults = recipes.filter(recipe => {
+                // Customize this condition based on your JSON structure and the key you want to search
+                return recipe.Recept.Naam.toLowerCase().includes(searchTerm);
+            });
+
+            filteredResults.forEach(recipe => {
+                const li = document.createElement('li');
+                li.textContent = recipe.Recept.Naam;
+                li.onclick = function() {
+                    window.location.href = '/recipes/' + recipe.Recept.Naam;
+                };
+                searchResults.appendChild(li);
+            });
+        });
+    </script>
+    <style>
+        /* Basic styling for the search box container */
+        #searchDiv {
+            position: relative;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        /* Styling for the input box */
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Styling for the search results list */
+        #searchResults {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            /* Ensure the search results overlay on top of other content */
+        }
+
+        /* Styling for the search result items */
+        #searchResults li {
+            padding: 8px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            background-color: #ccc;
+            transition: background-color 0.3s;
+        }
+
+        #searchResults li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </div>
