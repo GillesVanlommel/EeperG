@@ -5,26 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe List</title>
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/styleListPage.css">
 </head>
 
 <body>
-  <h1>Recipe List</h1>
-  <ul>
-    <% recipes.forEach(recipe=> { %>
-      <li>
+<h1>Recipe List</h1>
+<div class="main">
+  <% recipes.forEach(recipe=> { %>
+    <div class="receptTile">
+      <div class="receptImg">
+        <img src="" alt="">
+      </div>
+      <div class="receptName">
         <a href="/recipes/<%= recipe.Recept.Naam %>">
           <%= recipe.Recept.Naam %>
         </a>
-      </li>
-      <% }); %>
-  </ul>
+      </div>
+    </div>
+  <% }); %>
+</div>
 
-  <a href="/recipeAdd.html" class="button">
-    klik om recept toe te voegen
-  </a>
-
-
+<a href="/recipeAdd.html" class="button">
+  klik om recept toe te voegen
+</a>
 </body>
 
 </html>

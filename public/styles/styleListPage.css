@@ -1,0 +1,43 @@
+:root {
+    --primaire_kleur: rgb(255, 255, 255, 1);
+    --secundaire_kleur: rgb(236, 236, 236);
+    --accent_kleur_1: rgb(66, 214, 101);
+    --accent_kleur_2: rgb(220, 216, 216);
+    --accent_kleur_3: rgba(0, 0, 0, 0);
+    --tekst_kleur_1: rgb(255, 255, 255);
+    --tekst_kleur_2: rgb(90, 90, 90);
+  }
+
+  body {
+    background-image: url("https://www.foodiesfeed.com/wp-content/uploads/2023/09/healthy-food.jpg");
+    background-size: cover;
+    margin: 0 0px;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+  }
+  
+  .main {
+    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .receptTile {
+    display: flex;
+    height: max-content;
+    min-height: 1000;
+    width: 100%;
+    background-color: blueviolet;
+  }
+  .receptImg {
+    background-color: burlywood;
+    flex: 0.2;
+  }
+  .receptName {
+    background-color: deeppink;
+    flex: 0.8;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: var(--accent_kleur_2)
+  }
