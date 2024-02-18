@@ -24,7 +24,7 @@ vetgedrukte van nu.
   }
 body {
     margin: 0px;
-    background-image: url("../bg.png");
+    background-image: url("/bg.png");
     
 }
 .main {
