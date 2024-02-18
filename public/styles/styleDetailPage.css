@@ -7,6 +7,11 @@ vetgedrukte van nu.
 > [..]
 > ja da lettertype was nog placeholder das degoutant
 */
+
+
+
+
+
 /* Kleur vars */
 :root {
     --primaire_kleur: rgb(255, 255, 255, 1);
@@ -19,7 +24,7 @@ vetgedrukte van nu.
   }
 body {
     margin: 0px;
-    background-color: var(--secundaire_kleur);
+    background-image: url("../bg.png");
     
 }
 .main {
@@ -27,12 +32,13 @@ body {
     margin: auto;
     width: 65%;
     background-color: var(--accent_kleur_3);
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
 }
 .top img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px 15px 0px 0px;
+    /*border-radius: 15px 15px 0px 0px;*/
 }
 .top a {
     position: absolute;
@@ -77,6 +83,15 @@ body {
     display: flex;
     align-items: center;
     justify-self: center;
+}
+#icon {
+    width: 25px;
+    height: 25px;
+}
+#separator {
+    border-right: 2px solid var(--accent_kleur_2);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* Div bevat alle tags */
 .tagsbox {

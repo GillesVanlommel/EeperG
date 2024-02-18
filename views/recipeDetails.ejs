@@ -25,13 +25,52 @@
 
     <div class="infobox">
       <div class="tagsbox">
-        <i class="fa-solid fa-person">
-          <%= recept.personen%> 
-        </i>
+
         <% if (recept.tags.includes("vegan")) { %>
-          <i class="fa-solid fa-leaf">
-          </i>
-          <% } %>
+          <div id="separator"><img src="../vegan.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("ei")) { %>
+          <div id="separator"><img src="../ei.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("gluten")) { %>
+          <div id="separator"><img src="../gluten.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("lupine")) { %>
+          <div id="separator"><img src="../lupine.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("melk")) { %>
+          <div id="separator"><img src="../melk.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("sesamzaad")) { %>
+          <div id="separator"><img src="../sesamzaad.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("noten")) { %>
+          <div id="separator"><img src="../noten.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("zwaveldioxide")) { %>
+          <div id="separator"><img src="../zwaveldioxide.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("selderij")) { %>
+          <div id="separator"><img src="../selderij.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("pinda")) { %>
+          <div id="separator"><img src="../pinda.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("mosterd")) { %>
+          <div id="separator"><img src="../mosterd.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("vis")) { %>
+          <div id="separator"><img src="../vis.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("weekdieren")) { %>
+          <div id="separator"><img src="../weekdieren.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("soja")) { %>
+          <div id="separator"><img src="../soja.png" alt="" id="icon"></div>
+        <% } %>
+        <% if (recept.tags.includes("schaaldieren")) { %>
+          <div id="separator"><img src="../schaaldieren.png" alt="" id="icon"></div>
+        <% } %>
       </div>
 
       <div class="sharebox">
