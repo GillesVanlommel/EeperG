@@ -12,7 +12,8 @@ vetgedrukte van nu.
 body {
     margin: 0px;
     background-color: rgb(236, 236, 236);
-  }
+    
+}
 
 .main {
     font-family: fantasy;
@@ -21,7 +22,7 @@ body {
     color: black;
     margin: auto;
     width: 65%;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .top img{
@@ -63,6 +64,7 @@ body {
 }
 /* Div voor info zoals aantal personen, geschatte tijd, allergieën... */
 .infobox {
+    background-color: rgba(255, 255, 255, 1);
     color: rgb(66, 214, 101);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
@@ -80,9 +82,8 @@ body {
 }
 .sharebox {
     display: flex;
-    height: 100%;
     padding: 0 10px 0 10px;
-    flex-direction: row;
+    justify-content: space-between;
 }
 
 /* Div voor de stappen in te tonen*/

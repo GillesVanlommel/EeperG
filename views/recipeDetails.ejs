@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/styles/styleDetailPage.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <script src="/popUp.js"></script>
   <title>
     <%= recept.Naam %>
   </title>
@@ -26,23 +26,17 @@
     <div class="infobox">
       <div class="tagsbox">
         <i class="fa-solid fa-person">
-          <%= recept.personen%>
+          <%= recept.personen%> 
         </i>
         <% if (recept.tags.includes("vegan")) { %>
-            <i class="fa-solid fa-leaf">
-              Vegan
-            </i>
-          <% }
-        %>
+          <i class="fa-solid fa-leaf">
+          </i>
+          <% } %>
       </div>
 
       <div class="sharebox">
-        <a href="/sharepage">
-          <i class="fa-solid fa-pen"></i>
-        </a>
-        <a href="/">
-          <i class="fa-solid fa-share-nodes"></i>
-        </a>
+        <i class="fa-solid fa-pen" onclick="openPopup('edit-container')"></i>
+        <i class="fa-solid fa-share-nodes" onclick="openPopup('share-container')"></i>
       </div>
     </div>
 
@@ -86,6 +80,9 @@
     </div>
   </div>
 </body>
+<!-- PopUps -->
+<%- include("../partial/sharePopUp.ejs") %>
+  <%- include("../partial/editPopUp.ejs") %>
 
 </html>
 <%- include("../partial/footer") %>
