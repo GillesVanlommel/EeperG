@@ -40,10 +40,6 @@ router.post("/add", (req, res) => {
     res.redirect("/recipes")
 });
 
-// TODO: Dees is een tijdelijke route zodat ik eventjes de searchbar kan testen
-router.get("/tijdelijk", (req, res) => {
-    res.render("mama.ejs", {recipes});
-});
 
 // the moment a recipe is clicked and we to /recipe/name go
 router.get('/:Naam', (req, res) => {
