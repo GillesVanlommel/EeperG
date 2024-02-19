@@ -103,12 +103,16 @@ body {
     height: 25px;
 }
 .addTile {
+    display: flex;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 180px;
-    text-align: center;
-    align-items: center; /*TODO: plus teken ni int midde*/
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
     border-radius: 10px;
     background-color: var(--accent_kleur_1);   
+}
+.addTile p {
+    margin: 0;
 }
