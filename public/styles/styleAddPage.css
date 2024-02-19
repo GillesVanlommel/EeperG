@@ -1,0 +1,63 @@
+/* Kleur vars */
+:root {
+    --primaire_kleur: rgb(255, 255, 255, 1);
+    --secundaire_kleur: rgb(236, 236, 236);
+    --accent_kleur_1: rgb(66, 214, 101);
+    --accent_kleur_2: rgb(220, 216, 216);
+    --accent_kleur_3: rgba(0, 0, 0, 0);
+    --tekst_kleur_1: rgb(255, 255, 255);
+    --tekst_kleur_2: rgb(90, 90, 90);
+  }
+body {
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/bg.png");
+    
+}
+.main {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    background-color: var(--secundaire_kleur);
+}
+.imgBox {
+    background-color: aqua;
+    width: 100%;
+    height: 500px;
+}
+.titleBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: blueviolet;
+    width: 100%;
+    height: 100px;
+}
+.bottom {
+    background-color: chartreuse;
+    display: flex;
+    min-height: 800px;
+    width: 100%;
+}
+.ingredBox {
+    background-color: cadetblue;
+    flex: 0.3;
+}
+.bottomRight {
+    background-color: brown;
+    flex: 0.7;
+}
+.tagsBox {
+    background-color: coral;
+    width: 100%;
+    height: 100px;
+}
+.stepBox {
+    background-color: darkolivegreen;
+    width: 100%;
+    height: 500px;
+}
+#icon {
+    height: 45px;
+    width: 45px;
+}
