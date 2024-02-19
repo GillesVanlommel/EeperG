@@ -7,20 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is the add a recipe place</h1>
+<form action="/recipes/add" method="post">
     <div class="main">
         <div class="imgBox">
-            IMGGG
+            <input type="text" name="Foto" placeholder="Foto url">
+            <!-- TODO: drag and drop -->
         </div>
         <div class="titleBox">
-            TITLE
+            <input type="text" name="Naam" placeholder="Naam"><input type="text" name="Prijs" placeholder="Prijs">
+            <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal -->
         </div>
         <div class="bottom">
-            <div class="ingredBox">
-                INGR
+            <div class="bottomLeft">
+                <div class="persBox">
+                    <!-- TODO: optie om mannekes aantal ana te klikken? combineren met inputveld
+                    als meer dan 4 man -->
+                    <input type="text" name="personen" placeholder="personen">
+                </div>
+                <div class="ingredBox">
+                    <input type="text" name="Ingredienten" placeholder="Ingredienten">
+                </div>
             </div>
             <div class="bottomRight">
                 <div class="tagsBox">
+                    <!-- TODO: link knoppen aan output
+                        TODO: koppen moete ook toggle type zijn -->
                     <button><img src="/icons/vegan.png" title="Vegan" id="icon"></button>
                     <button><img src="/icons/ei.png" title="Ei" id="icon"></button>
                     <button><img src="/icons/gluten.png" title="Gluten" id="icon"></button>
@@ -39,27 +50,20 @@
                 </div>
                 <div class="stepBox">
                     <div class="step1">
-                        STEP
+                        <textarea name="Stappen" id="" cols="30" rows="10"></textarea>
                     </div>
-                    <button>ADD STEP</button>
+                    <button>
+                        <!-- TODO: fiks andere manier hier, nu gaat het csv gewijs zijn
+        ma da moe mogelijk zijn om me js daar echt stap 1, 2 en dan een "add stap" knop
+        te zetten -->
+                    </button>
                 </div>
             </div>
         </div>
+        <div class="submitBox">
+            <input type="submit" value="Voeg toe!">
+        </div>
     </div>
-
-    <form action="/recipes/add" method="post">
-        <input type="text" name="Naam" placeholder="Naam"> <br>
-        <input type="text" name="Prijs" placeholder="Prijs"> <br>
-        <input type="text" name="personen" placeholder="personen"> <br>
-        <input type="text" name="Ingredienten" placeholder="Ingredienten"> <br>
-        <textarea name="Stappen" id="" cols="30" rows="10"></textarea> <br>
-        <input type="text" name="Foto" placeholder="Foto url"> <br>
-
-        <!-- TODO: fiks andere manier hier, nu gaat het csv gewijs zijn
-        ma da moe mogelijk zijn om me js daar echt stap 1, 2 en dan een "add stap" knop
-        te zetten -->
-
-        <input type="submit" value="Voeg toe!">
-    </form>
+</form>
 </body>
 </html>

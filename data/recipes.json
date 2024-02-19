@@ -213,12 +213,12 @@
   },
   {
     "Recept": {
-      "Naam": "",
+      "Foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3EolWyii2dgyVzAPYraSxYTND7gZqg_1cYw&usqp=CAU",
+      "Naam": "TEST",
       "Prijs": "",
-      "personen": "",
-      "Ingredienten": "ml,ùm,",
-      "Stappen": "",
-      "Foto": ""
+      "personen": "2",
+      "Ingredienten": "dit, is, een",
+      "Stappen": "test om\r\nte zien of\r\nalles goed\r\nwerkt op de\r\nadd page"
     }
   }
 ]
