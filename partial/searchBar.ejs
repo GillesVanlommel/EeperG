@@ -20,10 +20,15 @@
             }
             // Filter and display matching results
             const filteredResults = recipes.filter(recipe => {
-                // Customize this condition based on your JSON structure and the key you want to search
-                return recipe.Recept.Naam.toLowerCase().includes(searchTerm);
+                if (recipe.Recept.Naam.includes(searchTerm)) {
+                    return true;
+                } else if (Object.keys(recipe.Recept.Ingredienten).some(ingredient => ingredient.toLowerCase().includes(searchTerm))) {
+                    // Check if the recipe ingredients includes the search term
+                    return true;
+                }
             });
-
+            console.log(Object.keys(recipes[0].Recept.Ingredienten)
+                        .some(ingredient => ingredient.toLowerCase().includes(searchTerm)));
             filteredResults.forEach(recipe => {
                 const li = document.createElement('li');
                 li.textContent = recipe.Recept.Naam;
@@ -32,6 +37,7 @@
                 };
                 searchResults.appendChild(li);
             });
+
         });
     </script>
     <style>
