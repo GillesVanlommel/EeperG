@@ -113,6 +113,3 @@ body {
     border-radius: 10px;
     background-color: var(--accent_kleur_1);   
 }
-.addTile p {
-    margin: 0;
-}
