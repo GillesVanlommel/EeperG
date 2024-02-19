@@ -19,12 +19,19 @@ body {
     text-align: center;
     margin: auto;
     width: 80%;
-    background-color: var(--secundaire_kleur);
+    background-color: var(--primaire_kleur);
 }
 .imgBox {
-    background-color: aqua;
-    width: 100%;
+    background-color: var(--secundaire_kleur);
+    width: 95%;
+    border-style: dotted;
+    border-radius: 15px;
+    border: 2px;
     height: 500px;
+}
+.imgBox img {
+    height: 20%;
+    object-fit: cover;
 }
 .titleBox {
     padding-top: 10px;
