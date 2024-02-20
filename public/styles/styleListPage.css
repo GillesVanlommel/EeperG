@@ -7,13 +7,15 @@
     --accent_kleur_4: rgb(0, 0, 0);
     --tekst_kleur_1: rgb(255, 255, 255);
     --tekst_kleur_2: rgb(90, 90, 90);
+    --tile_width: 15vw;
+    --tile_height: 20vw;
+    --icon_size: 1vw;
+    --font_size: 1.5vw;
+    --corner_radius: calc(var(--tile_width)*5/100);
   }
 
 body {
-    background-size: cover;
-    margin: 0 0px;
-    height: 100vh;
-    width: 100vw;
+    margin: 0vh;
     color: white;
     justify-content: center;
 }
@@ -21,40 +23,42 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    margin-top: 20px;
+    margin-top: 3vh;
 }
 .gridContainer {
-    place-items: center;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
+    height: fit-content;
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 450px;
-    grid-gap: 20px;
+    grid-template-columns: repeat(5,var(--tile_width));
+    grid-auto-rows: var(--tile_height);
+    grid-gap: 3vh;
 }
 .topBar {
     font-family: 'Times New Roman', Times, serif;
     color:var(--accent_kleur_4);
-    font-size: 40px;
     background-color: var(--primaire_kleur);
     border-bottom: 4px solid var(--secundaire_kleur);
     box-shadow: 0 0 0 2px var(--accent_kleur_1);
-    height: 80px;
+    height: 8vh;
     width: 100%;
     display: flex;
 }
 .zoekBalk {
-    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
     flex: 0.7;
 }
 .filter {
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
     flex: 0.3;
 }
-#dropdown { /*TODO: Waarom is die filterbar zo fokking lang*/
-    width: 100%;
-    padding: 10px;
+#dropdown {
+    width: 80%;
     border-radius: 5px;
     border: 2px solid var(--secundaire_kleur);
     background-color: var(--primaire_kleur);
@@ -63,32 +67,31 @@ body {
   }
 .receptTile {
     background-color: var(--secundaire_kleur);
-    border-radius: 10px;
+    border-radius: var(--corner_radius);
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 .receptImg {
-    padding-top: 20px;
-    padding-left: 20px; /*TODO: hardcode, geen enkele align wil de foto centreren wordt zot*/
-    padding-right: 20px;
-    padding-bottom: 10px;
+    padding-bottom: calc(var(--tile_width)*5/100);
+    padding-top: calc(var(--tile_width)*5/100);
     border-bottom: 3px solid var(--accent_kleur_2);
+    margin: auto;
     height: 55%;
-    width: 300px;
+    width: 90%;
 }
 .receptImg img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: var(--corner_radius);
 }
 .receptName {
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0vh 0vh var(--corner_radius) var(--corner_radius);
     height: 35%;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
+    font-size: var(--font_size);
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
@@ -99,13 +102,13 @@ body {
     height: 10%;
 }
 #icon {
-    width: 25px;
-    height: 25px;
+    width: var(--icon_size);
+    height: var(--icon_size);
 }
 .addTile {
     display: flex;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 180px;
+    font-size: calc(var(--font_size)*3);
     align-items: center;
     justify-content: center;
     height: 100%;

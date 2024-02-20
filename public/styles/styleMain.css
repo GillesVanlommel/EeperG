@@ -8,9 +8,8 @@ body {
 }
 
 #recipeButton {
-  border: 3px solid #3e3f3f;
-  width: 100px;
-  height: 100px;
+  width: 10vh;
+  height: 10vh;
 }
 
 .button {
@@ -46,7 +45,7 @@ body {
     width: 100vw;
     display: flex;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 300px;
+    font-size: 30vh;
   }
 
   
@@ -68,27 +67,4 @@ body {
     mix-blend-mode:multiply;
     color: #ffffff;
     padding-top: 30%;
-  }
-
-  .overlay {
-    position: relative;
-    background-color: rgba(0, 0, 0);
-    height: 1000px;
-    width: 100%;
-    text-align: center;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 150px;
-    padding: 50px 50px 50px 0;
-    mix-blend-mode:multiply;
-    color: #ffffff;
-  }
-
-  .overlayItem2 {
-    position: absolute;
-    padding-top: 100px;
-    top: 550px;
-    right: 50px;
-    text-align: right;
-    size: 50 50px;
-    z-index: 1;
   }
