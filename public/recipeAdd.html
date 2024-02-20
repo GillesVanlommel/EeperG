@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styleAddPage.css">
     <title>Document</title>
 </head>
+
 <body>
-<form action="/recipes/add" method="post">
-    <div class="main">
-        <div class="imgBox">
-            <img src="/icons/image.png" id="tempImg">
-            <input type="text" name="Foto" placeholder="Foto url">
-            <!-- TODO: drag and drop -->
-        </div>
-        <div class="titleBox">
-            <input type="text" name="Naam" placeholder="Naam"><input type="text" name="Prijs" placeholder="Prijs">
-            <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal -->
-        </div>
-        <div class="bottom">
-            <div class="bottomLeft">
-                <div class="persBox">
-                    <!-- TODO: optie om mannekes aantal ana te klikken? combineren met inputveld
+    <form action="/recipes/add" method="post">
+        <div class="main">
+            <div class="imgBox">
+                <img src="/icons/image.png" id="tempImg">
+                <input type="text" name="Foto" placeholder="Foto url">
+                <!-- TODO: drag and drop -->
+            </div>
+            <div class="titleBox">
+                <input type="text" name="Naam" placeholder="Naam"><input type="text" name="Prijs" placeholder="Prijs">
+                <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal -->
+            </div>
+            <div class="bottom">
+                <div class="bottomLeft">
+                    <div class="persBox">
+                        <!-- TODO: optie om mannekes aantal ana te klikken? combineren met inputveld
                     als meer dan 4 man -->
-                    <input type="text" name="personen" placeholder="personen">
-                </div>
-                <div class="ingredBox">
-                    <input type="text" name="Ingredienten" placeholder="Ingredienten">
-                </div>
-            </div>
-            <div class="bottomRight">
-                <div class="tagsBox">
-                    <!-- TODO: link knoppen aan output
-                        TODO: koppen moete ook toggle type zijn --> 
-                    <button><img src="/icons/vegan.png" title="Vegan" id="icon"></button>
-                    <button><img src="/icons/ei.png" title="Ei" id="icon"></button>
-                    <button><img src="/icons/gluten.png" title="Gluten" id="icon"></button>
-                    <button><img src="/icons/lupine.png" title="Lupine" id="icon"></button>
-                    <button><img src="/icons/melk.png" title="Melk" id="icon"></button>
-                    <button><img src="/icons/sesamzaad.png" title="Sesamzaad" id="icon"></button>
-                    <button><img src="/icons/noten.png" title="Noten" id="icon"></button>
-                    <button><img src="/icons/zwaveldioxide.png" title="Zwaveldioxide" id="icon"></button>
-                    <button><img src="/icons/selderij.png" title="Selderij" id="icon"></button>
-                    <button><img src="/icons/pinda.png" title="Pinda" id="icon"></button>
-                    <button><img src="/icons/mosterd.png" title="Mosterd" id="icon"></button>
-                    <button><img src="/icons/vis.png" title="Vis" id="icon"></button>
-                    <button><img src="/icons/weekdieren.png" title="Weekdieren" id="icon"></button>
-                    <button><img src="/icons/soja.png" title="Soja" id="icon"></button>
-                    <button><img src="/icons/schaaldieren.png" title="Schaaldieren" id="icon"></button>
-                </div>
-                <div class="stepBox">
-                    <div class="step1">
-                        <textarea name="Stappen" id="" cols="30" rows="10"></textarea>
+                        <input type="text" name="personen" placeholder="personen">
                     </div>
+                    <div class="ingredBox">
+                        <input type="text" name="Ingredienten" placeholder="Ingredienten">
+                    </div>
+                </div>
+                <div class="bottomRight">
+                    <div class="tagsBox">
+                        <!-- TODO: link knoppen aan output
+                        TODO: koppen moete ook toggle type zijn -->
+                        <button><img src="/icons/vegan.png" title="Vegan" id="icon"></button>
+                        <button><img src="/icons/ei.png" title="Ei" id="icon"></button>
+                        <button><img src="/icons/gluten.png" title="Gluten" id="icon"></button>
+                        <button><img src="/icons/lupine.png" title="Lupine" id="icon"></button>
+                        <button><img src="/icons/melk.png" title="Melk" id="icon"></button>
+                        <button><img src="/icons/sesamzaad.png" title="Sesamzaad" id="icon"></button>
+                        <button><img src="/icons/noten.png" title="Noten" id="icon"></button>
+                        <button><img src="/icons/zwaveldioxide.png" title="Zwaveldioxide" id="icon"></button>
+                        <button><img src="/icons/selderij.png" title="Selderij" id="icon"></button>
+                        <button><img src="/icons/pinda.png" title="Pinda" id="icon"></button>
+                        <button><img src="/icons/mosterd.png" title="Mosterd" id="icon"></button>
+                        <button><img src="/icons/vis.png" title="Vis" id="icon"></button>
+                        <button><img src="/icons/weekdieren.png" title="Weekdieren" id="icon"></button>
+                        <button><img src="/icons/soja.png" title="Soja" id="icon"></button>
+                        <button><img src="/icons/schaaldieren.png" title="Schaaldieren" id="icon"></button>
+                    </div>
+                    <div class="stepBox">
+                        <div class="step1">
+                            <textarea name="Stappen" id="" cols="30" rows="10"></textarea>
+                        </div>
                         <!-- TODO: fiks andere manier hier, nu gaat het csv gewijs zijn
-        ma da moe mogelijk zijn om me js daar echt stap 1, 2 en dan een "add stap" knop
-        te zetten -->
+                        ma da moe mogelijk zijn om me js daar echt stap 1, 2 en dan een "add stap" knop
+                        te zetten -->
+                    </div>
                 </div>
             </div>
+            <div class="submitBox">
+                <input type="submit" value="Voeg toe!">
+            </div>
         </div>
-        <div class="submitBox">
-            <input type="submit" value="Voeg toe!">
-        </div>
-    </div>
-</form>
+    </form>
 </body>
+
 </html>

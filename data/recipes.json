@@ -191,24 +191,5 @@
         "melk"
       ]
     }
-  },
-  {
-    "Recept": {
-      "Naam": "Kad met radijsjes",
-      "Prijs": "None",
-      "personen": 3,
-      "Ingredienten": {
-        "Cake": "inf"
-      },
-      "Stappen": [
-        "bruh"
-      ],
-      "Foto": "https://media.tenor.com/q-CmztRV07QAAAAe/cat-cat-meme.png",
-      "tags": [
-        "vegan",
-        "melk",
-        "noten"
-      ]
-    }
   }
 ]

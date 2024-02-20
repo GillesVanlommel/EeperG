@@ -40,6 +40,17 @@ router.post("/add", (req, res) => {
     res.redirect("/recipes")
 });
 
+// route for when we want to delete a recipe
+router.post("/delete/:Naam", (req, res) => {
+    const recipeName = req.params.Naam;
+    console.log(recipeName);
+    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
+    const index = recipes.indexOf(recipe);
+    recipes.splice(index, 1);
+    fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
+    res.redirect("/recipes");
+});
+
 
 // the moment a recipe is clicked and we to /recipe/name go
 router.get('/:Naam', (req, res) => {

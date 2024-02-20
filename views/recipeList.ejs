@@ -37,13 +37,11 @@
           </div>
           <div class="editbox">
             <!-- TODO: je zie niks van tekst omda tekst_kleur1 wit is -->
-            <!-- TODO: functionaliteit geven aan trash: popup met 'ben je zeker je wil verwijderen
-              en ook effectief verwijderen' -->
               <!-- TODO: edit functionaliteit toevoegen, hoe ik da bij men app deed is gwn
               exact dezelfde pagina als de AddPage, maar dan met alle vensters ingevuld, submit
             ga hier dan wel geen nieuwe moge maken maar een bestaand recept bewerken -->
-            <img src="/icons/edit.png" onclick="openPopup('edit-container'); event.stopPropagation()" id="icon" title="Bewerken">
-            <img src="/icons/trash.png" onclick="openPopup('edit-container'); event.stopPropagation()" id="icon" title="Verwijder">
+            <img src="/icons/edit.png" onclick="openPopup('edit-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Bewerken">
+            <img src="/icons/trash.png" onclick="openPopup('delete-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Verwijder">
           </div>
         </div>
       <% }); %>
@@ -54,5 +52,6 @@
   </div>
   <!-- Pop-ups! -->
   <%- include("../partial/editPopUp.ejs") %> 
+  <%- include("../partial/deletePopUp.ejs") %>
 </body>
 </html>
