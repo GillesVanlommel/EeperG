@@ -50,13 +50,13 @@ router.post("/delete/:Naam", (req, res) => {
 });
 
 // route for when we want to edit a recipe
-router.post("/edit/:Naam", (req, res) => {
+router.get("/edit/:Naam", (req, res) => {
     const recipeName = req.params.Naam;
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
     const index = recipes.indexOf(recipe);
     res.render("recipeAdd.ejs", {recipe});
 });
-router.get("/edit", (req, res) => {
+router.post("/edit", (req, res) => {
     const recipeName = req.body.Naam;
     const updatedRecipe = req.body;
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
