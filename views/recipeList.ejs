@@ -36,16 +36,19 @@
             <%= recipe.Recept.Naam %>
           </div>
           <div class="editbox">
-            <!-- TODO: je zie niks van tekst omda tekst_kleur1 wit is -->
-              <!-- TODO: edit functionaliteit toevoegen, hoe ik da bij men app deed is gwn
-              exact dezelfde pagina als de AddPage, maar dan met alle vensters ingevuld, submit
-            ga hier dan wel geen nieuwe moge maken maar een bestaand recept bewerken -->
+            <!-- TODO: edit functionaliteit toevoegen, hoe ik da bij men app deed is gwn
+            exact dezelfde pagina als de AddPage, maar dan met alle vensters ingevuld, submit
+            ga hier dan wel geen nieuwe moge maken maar een bestaand recept bewerken 
+            
+            DAS exact wak aan het doen ben. Alles staat er klaar voor, ik moet gewoon fiksen da die 
+            die waarden invult in de velden ma das ni moeilijk. Tis gwn slapen tijd.
+            -->
             <img src="/icons/edit.png" onclick="openPopup('edit-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Bewerken">
             <img src="/icons/trash.png" onclick="openPopup('delete-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Verwijder">
           </div>
         </div>
       <% }); %>
-      <div class="addTile" onclick="window.location.href = '/recipeAdd.html'">
+      <div class="addTile" onclick="window.location.href = './recipes/add'">
         <p>+</p>
       </div>
     </div>
