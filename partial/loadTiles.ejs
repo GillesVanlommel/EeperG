@@ -1,0 +1,27 @@
+<script>
+    function filterAndLoad (filter) {
+        const recipes = <%- JSON.stringify(recipes) %>;
+        const filteredResults = recipes.filter(recipe => {
+                if (recipe.Recept.tags.includes(filter)) {
+                    return true;
+                };
+            });
+        var doc = document.getElementById('gridContainer');
+        doc.innerHTML = '';
+        }
+</script>
+
+<% recipes.forEach(recipe=> { %>
+    <div class="receptTile" onclick="window.location.href = '/recipes/<%= recipe.Recept.Naam %>'">
+      <div class="receptImg">
+        <img src="<%=recipe.Recept.Foto %>" id="foto">
+      </div>
+      <div class="receptName">
+        <%= recipe.Recept.Naam %>
+      </div>
+      <div class="editbox">
+        <img src="/icons/edit.png" onclick="openPopup('edit-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Bewerken">
+        <img src="/icons/trash.png" onclick="openPopup('delete-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Verwijder">
+      </div>
+    </div>
+  <% }); %>

@@ -11,11 +11,10 @@
 <body>
     <form action="/recipes/add" method="post">
         <div class="main">
-            <div class="imgBox">
-                <img src="/icons/image.png" id="tempImg">
-                <input type="text" name="Foto" placeholder="Foto url">
-                <!-- TODO: drag and drop -->
+            <div id="drag_drop", ondrop="dropped(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)">
+                <img src="/icons/image.png">
             </div>
+            <%- include("../partial/dragDrop.ejs") %>
             <div class="titleBox">
                 <input type="text" name="Naam" placeholder="Naam"><input type="text" name="Prijs" placeholder="Prijs">
                 <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal -->

@@ -1,0 +1,52 @@
+<script>
+    function dropped(event) {
+        event.preventDefault(); //normaal als ge file dropped opent die da in een nieuwe tab, dit houd da tegen
+        
+        const files = event.dataTransfer.files; //getter van de gedropte files
+
+        if(files.length === 1) {
+            const reader = new FileReader(); //maak filereader object
+            reader.onload = function (e) { //onload triggered als de reader gelezen heeft
+                const dropzone = document.getElementById('drag_drop'); //neem de drag_drop div
+                dropzone.style.backgroundImage = `url('${e.target.result}')`; //zet de achtergrond van de div naar de gedropte foto
+                dropzone.querySelector('img').style.display = 'none'; //verwijder bestaande foto
+                dropzone.textContent = ''  //verwijder bestaande tekst
+            };
+
+            reader.readAsDataURL(files[0]); // het echte uitlezen, als hij klaar is wordt onload getriggerd
+        }
+    }
+
+    function dragOverHandler(event) {
+        event.preventDefault();
+        const dropZone = document.getElementById('imgBox');
+        dropZone.classList.add('dragover'); //voeg dragover class toe zoda je en style kunt hangen eraan
+    }
+
+    function dragLeaveHandler(event) {
+        const dropZone = document.getElementById('imgBox');
+        dropZone.classList.remove('dragover'); //verwijder die class terug
+    }
+</script>
+<style>
+    #drag_drop {
+        background-color: var(--secundaire_kleur);
+        width: 100%;
+        border-style:dashed;
+        border-radius: 15px;
+        border: 2px solid var(--accent_kleur_2);
+        height: 43vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #drag_drop img {
+        height: 20%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #drag_drop.dragover {
+        background-color: var(--accent_kleur_2);
+    }
+</style>

@@ -18,36 +18,19 @@
       <%- include("../partial/searchBar.ejs") %>
     </div>
     <div class="filter">
-      <select id="dropdown">
-        <option value="">AUGGG</option>
-        <option value="Deez nuts">Deez nuts</option>
-        <option value="the">the</option>
+      <select id="dropdown" onchange="">
+        <option value="Alle gerechten">AUGGG</option>
+        <option value="Vegan gerechten">Deez nuts</option>
+        <option value="Hoofdgerechten">the</option>
+        <option value="Voorgerechten">the</option>
+        <option value="Deserts">the</option>
+        <option value="...">the</option>
       </select>
     </div>
   </div>
   <div class="main">
     <div class="gridContainer">
-      <% recipes.forEach(recipe=> { %>
-        <div class="receptTile" onclick="window.location.href = '/recipes/<%= recipe.Recept.Naam %>'">
-          <div class="receptImg">
-            <img src="<%=recipe.Recept.Foto %>" id="foto">
-          </div>
-          <div class="receptName">
-            <%= recipe.Recept.Naam %>
-          </div>
-          <div class="editbox">
-            <!-- TODO: edit functionaliteit toevoegen, hoe ik da bij men app deed is gwn
-            exact dezelfde pagina als de AddPage, maar dan met alle vensters ingevuld, submit
-            ga hier dan wel geen nieuwe moge maken maar een bestaand recept bewerken 
-            
-            DAS exact wak aan het doen ben. Alles staat er klaar voor, ik moet gewoon fiksen da die 
-            die waarden invult in de velden ma das ni moeilijk. Tis gwn slapen tijd.
-            -->
-            <img src="/icons/edit.png" onclick="openPopup('edit-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Bewerken">
-            <img src="/icons/trash.png" onclick="openPopup('delete-container', '<%= recipe.Recept.Naam %>'); event.stopPropagation()" id="icon" title="Verwijder">
-          </div>
-        </div>
-      <% }); %>
+      <%- include("../partial/loadTiles.ejs") %>
       <div class="addTile" onclick="window.location.href = './recipes/add'">
         <p>+</p>
       </div>

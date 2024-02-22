@@ -10,8 +10,6 @@
   }
 body {
     margin: 0px;
-    height: 100vh;
-    width: 100vw;
     background-image: url("/bg.png");
     
 }
@@ -19,19 +17,23 @@ body {
     text-align: center;
     margin: auto;
     width: 80%;
-    background-color: var(--primaire_kleur);
 }
-.imgBox {
+#drag_drop {
     background-color: var(--secundaire_kleur);
-    width: 95%;
-    border-style: dotted;
+    width: 100%;
+    border-style:dashed;
     border-radius: 15px;
-    border: 2px;
-    height: 500px;
+    border: 2px solid var(--accent_kleur_2);
+    height: 43vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.imgBox img {
+#drag_drop img {
     height: 20%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .titleBox {
     padding-top: 10px;
