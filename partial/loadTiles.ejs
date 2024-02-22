@@ -9,22 +9,26 @@
         var element = document.getElementById('gridContainer');
         element.innerHTML = '';
         console.log(filteredResults)
-        filteredResults.forEach(recipe => {
-            element.innerHTML += `
-            <div class="receptTile" onclick="window.location.href = '/recipes/${recipe.Recept.Naam}'">
-                <div class="receptImg">
-                    <img src="${recipe.Recept.Foto}" id="foto">
-                </div>
-                <div class="receptName">
-                    ${recipe.Recept.Naam}
-                </div>
-                <div class="editbox">
-                    <img src="/icons/edit.png" onclick="openPopup('edit-container', '${recipe.Recept.Naam}'); event.stopPropagation()" id="icon" title="Bewerken">
-                    <img src="/icons/trash.png" onclick="openPopup('delete-container', '${recipe.Recept.Naam}'); event.stopPropagation()" id="icon" title="Verwijder">
-                </div>
-            </div>
-            `});
-        }
+          filteredResults.forEach(recipe => {
+              element.innerHTML += `
+              <div class="receptTile" onclick="window.location.href = '/recipes/${recipe.Recept.Naam}'">
+                  <div class="receptImg">
+                      <img src="${recipe.Recept.Foto}" id="foto">
+                  </div>
+                  <div class="receptName">
+                      ${recipe.Recept.Naam}
+                  </div>
+                  <div class="editbox">
+                      <img src="/icons/edit.png" onclick="openPopup('edit-container', '${recipe.Recept.Naam}'); event.stopPropagation()" id="icon" title="Bewerken">
+                      <img src="/icons/trash.png" onclick="openPopup('delete-container', '${recipe.Recept.Naam}'); event.stopPropagation()" id="icon" title="Verwijder">
+                  </div>
+              </div>
+              `});
+              element.innerHTML += `
+              <div class="addTile" onclick="window.location.href = './recipes/add'">
+                <p>+</p>
+              </div>
+              `};
 </script>
 
 <% recipes.forEach(recipe=> { %>
