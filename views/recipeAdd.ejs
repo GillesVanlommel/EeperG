@@ -34,27 +34,29 @@
                     <div class="tagsBox">
                         <!-- TODO: link knoppen aan output
                         TODO: koppen moete ook toggle type zijn -->
-                        <button><img src="/icons/vegan.png" title="Vegan" id="icon"></button>
-                        <button><img src="/icons/ei.png" title="Ei" id="icon"></button>
-                        <button><img src="/icons/gluten.png" title="Gluten" id="icon"></button>
-                        <button><img src="/icons/lupine.png" title="Lupine" id="icon"></button>
-                        <button><img src="/icons/melk.png" title="Melk" id="icon"></button>
-                        <button><img src="/icons/sesamzaad.png" title="Sesamzaad" id="icon"></button>
-                        <button><img src="/icons/noten.png" title="Noten" id="icon"></button>
-                        <button><img src="/icons/zwaveldioxide.png" title="Zwaveldioxide" id="icon"></button>
-                        <button><img src="/icons/selderij.png" title="Selderij" id="icon"></button>
-                        <button><img src="/icons/pinda.png" title="Pinda" id="icon"></button>
-                        <button><img src="/icons/mosterd.png" title="Mosterd" id="icon"></button>
-                        <button><img src="/icons/vis.png" title="Vis" id="icon"></button>
-                        <button><img src="/icons/weekdieren.png" title="Weekdieren" id="icon"></button>
-                        <button><img src="/icons/soja.png" title="Soja" id="icon"></button>
-                        <button><img src="/icons/schaaldieren.png" title="Schaaldieren" id="icon"></button>
+                        <button type="button"><img src="/icons/vegan.png" title="Vegan" id="icon"></button>
+                        <button type="button"><img src="/icons/ei.png" title="Ei" id="icon"></button>
+                        <button type="button"><img src="/icons/gluten.png" title="Gluten" id="icon"></button>
+                        <button type="button"><img src="/icons/lupine.png" title="Lupine" id="icon"></button>
+                        <button type="button"><img src="/icons/melk.png" title="Melk" id="icon"></button>
+                        <button type="button"><img src="/icons/sesamzaad.png" title="Sesamzaad" id="icon"></button>
+                        <button type="button"><img src="/icons/noten.png" title="Noten" id="icon"></button>
+                        <button type="button"><img src="/icons/zwaveldioxide.png" title="Zwaveldioxide" id="icon"></button>
+                        <button type="button"><img src="/icons/selderij.png" title="Selderij" id="icon"></button>
+                        <button type="button"><img src="/icons/pinda.png" title="Pinda" id="icon"></button>
+                        <button type="button"><img src="/icons/mosterd.png" title="Mosterd" id="icon"></button>
+                        <button type="button"><img src="/icons/vis.png" title="Vis" id="icon"></button>
+                        <button type="button"><img src="/icons/weekdieren.png" title="Weekdieren" id="icon"></button>
+                        <button type="button"><img src="/icons/soja.png" title="Soja" id="icon"></button>
+                        <button type="button"><img src="/icons/schaaldieren.png" title="Schaaldieren" id="icon"></button>
                     </div>
-                    <div class="stepBox">
-                        <div class="step1">
+                    <div class="stepBox", id="stepBox">
+                        <div class="step">
                             <textarea name="Stappen" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
+                    <button type="button" onclick="insertStep()">Add Step!!! ツ</button>
+                    <%- include("../partial/insertStep.ejs") %>
                 </div>
             </div>
             <div class="submitBox">
