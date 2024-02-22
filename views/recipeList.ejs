@@ -18,18 +18,18 @@
       <%- include("../partial/searchBar.ejs") %>
     </div>
     <div class="filter">
-      <select id="dropdown" onchange="">
-        <option value="Alle gerechten">AUGGG</option>
-        <option value="Vegan gerechten">Deez nuts</option>
-        <option value="Hoofdgerechten">the</option>
-        <option value="Voorgerechten">the</option>
-        <option value="Deserts">the</option>
-        <option value="...">the</option>
+      <select id="dropdown" onchange="filterAndLoad(event)">
+        <option value="alle">Alle</option>
+        <option value="vegan">Vegan</option>
+        <option value="hoofdgerecht">Hoofdgerechten</option>
+        <option value="voorgerecht">Voorgerechten</option>
+        <option value="deserts">Deserts</option>
+        <option value="...">...</option>
       </select>
     </div>
   </div>
   <div class="main">
-    <div class="gridContainer">
+    <div class="gridContainer" id="gridContainer">
       <%- include("../partial/loadTiles.ejs") %>
       <div class="addTile" onclick="window.location.href = './recipes/add'">
         <p>+</p>

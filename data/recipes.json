@@ -44,7 +44,8 @@
         "vis",
         "weekdieren",
         "soja",
-        "schaaldieren"
+        "schaaldieren",
+        "desert"
       ]
     }
   },
@@ -75,7 +76,7 @@
         "Bak de eieren en voeg deze toe aan de nasi"
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2016/07/nasi-goreng-recept.jpg",
-      "tags": []
+      "tags": ["hoofdgerecht"]
     }
   },
   {
@@ -107,7 +108,7 @@
         "Serveer de saus over de gekookte spaghetti en garneer met Parmezaanse kaas"
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2019/06/spaghetti-bolognese_b-1.jpg",
-      "tags": []
+      "tags": ["hoofdgerecht"]
     }
   },
   {
@@ -131,7 +132,7 @@
         "Garneer met Parmezaanse kaas"
       ],
       "Foto": "https://www.leukerecepten.nl/wp-content/uploads/2022/07/Pasta-met-kip-pesto-recept.jpg",
-      "tags": []
+      "tags": ["hoofdgerecht"]
     }
   },
   {
@@ -188,7 +189,8 @@
       ],
       "Foto": "https://images.vrt.be/dako2017_1600s_j75/2019/03/15/37878604-4713-11e9-abcc-02b7b76bf47f.jpg",
       "tags": [
-        "melk"
+        "melk",
+        "hoofdgerecht"
       ]
     }
   },
@@ -206,7 +208,8 @@
       ],
       "tags": [
         "geit",
-        "vlees"
+        "vlees",
+        "hoofdgerecht"
       ]
     }
   }
