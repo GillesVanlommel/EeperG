@@ -15,8 +15,9 @@
                 <img src="/icons/image.png">
             </div>
             <%- include("../partial/dragDrop.ejs") %>
-            <div class="titleBox">
-                <input type="text" name="Naam" placeholder="Naam"><input type="text" name="Prijs" placeholder="Prijs">
+            <input class="titleBox">
+                <input type="text" name="Naam" placeholder="Naam" value="<%= recipe.Recept.Naam %>">
+                <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
                 <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal 
                             lijkt me gwn een handig weetje. kzou mensen da zelf laten invullen gwn en da ze da dan ma aanpassen zoals ze willen
                 -->
@@ -27,11 +28,13 @@
                     <div class="ingredBox">
                         <input type="text" name="Ingredienten" placeholder="Ingredienten">
                     </div>
+                    
                 </div>
                 <div class="bottomRight">
                     <div class="tagsBox">
                         <!-- TODO: link knoppen aan output
-                        TODO: koppen moete ook toggle type zijn -->
+                        TODO: koppen moete ook toggle type zijn : ik denk da da kan door gwn die knoppen hier onder te veranderen in <input type="radio"> en dan is da eig een toggle en 
+                    gwn me css dan aan te passen da da eruit ziet als die icoontjes-->
                         <button type="button" id="iconButton" onclick="clickedTag(event)"><img src="/icons/vegan.png" title="Vegan" id="icon"></button>
                         <button type="button" id="iconButton" onclick="clickedTag(event)"><img src="/icons/ei.png" title="Ei" id="icon"></button>
                         <button type="button" id="iconButton" onclick="clickedTag(event)"><img src="/icons/gluten.png" title="Gluten" id="icon"></button>

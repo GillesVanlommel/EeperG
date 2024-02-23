@@ -50,6 +50,7 @@ router.post("/delete/:Naam", (req, res) => {
 });
 
 // route for when we want to edit a recipe
+//TODO: zorgen dat de edit pagina alvast de huidige waardes van het recept laat zien
 router.get("/edit/:Naam", (req, res) => {
     const recipeName = req.params.Naam;
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
