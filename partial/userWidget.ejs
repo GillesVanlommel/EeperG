@@ -1,43 +1,44 @@
 <div class="persBox">
-    <button type="button" class="personButton" onclick="changePerson('1')"><img src="/icons/person_blank.png" id="1"></button>
-    <button type="button" class="personButton" onclick="changePerson('2')"><img src="/icons/person_blank.png" id="2"></button>
-    <button type="button" class="personButton" onclick="changePerson('3')"><img src="/icons/person_blank.png" id="3"></button>
-    <button type="button" class="personButton" onclick="changePerson('4')"><img src="/icons/person_blank.png" id="4"></button>
+    <button type="button" class="personButton" onclick="changePerson('1')"><img src="/icons/person_blank.png" id="0" class="personButtonImg"></button>
+    <button type="button" class="personButton" onclick="changePerson('2')"><img src="/icons/person_blank.png" id="1" class="personButtonImg"></button>
+    <button type="button" class="personButton" onclick="changePerson('3')"><img src="/icons/person_blank.png" id="2" class="personButtonImg"></button>
+    <button type="button" class="personButton" onclick="changePerson('4')"><img src="/icons/person_blank.png" id="3" class="personButtonImg"></button>
 </div>
 <script>
     function changePerson(id) { //TODO: macheert nogni volledig
         const person = document.getElementById(id);
-        const buttons = document.querySelectorAll('.personButton');
-        if (person.src.includes('person_blank')) {
-            person.src = '/icons/person_filled.png';
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].src = '/icons/person_filled.png';
-            }
-        } else {
-            person.src = '/icons/person_blank.png';
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].src = '/icons/person_blank.png';
-            }
-        }
+        const imgs = document.querySelectorAll('.personButtonImg');
+        console.log(person);
+        console.log(imgs);
+        for (let i = 0; i < parseInt(id); i++) {
+            console.log(i)
+            imgs[i].src = '/icons/person_filled.png';
+        };
+        for (let i = parseInt(id); i < imgs.length; i++) {
+            imgs[i].src = '/icons/person_blank.png';
+            };
     }
 </script>
 <style>
     .persBox {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        margin-top: 10px;
+        background-color: var(--accent_kleur_4);
+        border-radius: 0.4vh;
+        border: 0.2vh solid rgb(0,0,0);
     }
 
     .personButton {
-        border-radius: 5px;
-        width: 50px;
-        height: 50px;
+        width: 5vh;
+        height: 5vh;
+        background-color: rgba(0,0,0,0);
+        border: none;
     }
 
     .personButton img {
         width: 100%;
-        height: 100%;
     }
 </style>
 sc

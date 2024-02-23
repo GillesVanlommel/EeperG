@@ -5,6 +5,8 @@
     --accent_kleur_1: rgb(66, 214, 101);
     --accent_kleur_2: rgb(220, 216, 216);
     --accent_kleur_3: rgba(0, 0, 0, 0);
+    --accent_kleur_4: rgb(194, 221, 190);
+    --accent_kleur_5: rgb(204, 233, 199);
     --tekst_kleur_1: rgb(255, 255, 255);
     --tekst_kleur_2: rgb(90, 90, 90);
   }
@@ -16,13 +18,14 @@ body {
 .main {
     text-align: center;
     margin: auto;
+    background-color: var(--primaire_kleur);
     width: 80%;
 }
 #drag_drop {
     background-color: var(--secundaire_kleur);
     width: 100%;
     border-style:dashed;
-    border-radius: 15px;
+    border-radius:  0 0 15px 15px;
     border: 2px solid var(--accent_kleur_2);
     height: 43vh;
     background-size: cover;
@@ -38,24 +41,23 @@ body {
 .titleBox {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: blueviolet;
+    background-color: var(--secundaire_kleur);
+    border: var(--accent_kleur_2);
     width: 100%;
     height: 100px;
 }
 .bottom {
-    background-color: chartreuse;
     display: flex;
     min-height: 800px;
     width: 100%;
 }
 .bottomLeft {
-    background-color: cadetblue;
     flex: 0.3;
     display: flex;
     flex-direction: column;
 }
 .persBox {
-    background-color: yellow;
+    background-color: var(--secundaire_kleur);
     width: 100%;
     height: 100px;
 }
@@ -65,24 +67,32 @@ body {
     min-height: 500px;
 }
 .bottomRight {
-    background-color: brown;
     flex: 0.7;
 }
 .tagsBox {
-    background-color: coral;
+    background-color: var(--accent_kleur_4);
+    border-radius: 0.4vh;
+    border: 0.2vh solid rgb(0,0,0);
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
-    height: 100px;
+    height: fit-content;
+    min-height: 8vh;
 }
 .stepBox {
-    background-color: darkolivegreen;
     width: 100%;
-    height: 500px;
+    height: fit-content;
 }
 #icon {
-    height: 45px;
-    width: 45px;
+    width: 100%;
+}
+#iconButton {
+    height: 5vh;
+    width: 5vh;
+    background-color: var(--accent_kleur_5);
+    border-radius: 1vh;
+    border: none;
 }
 .submitBox {
     background-color: deeppink;
@@ -95,5 +105,14 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+    height: 5vh;
     background-color: var(--secundaire_kleur);
+    border-radius: 0.4vh;
+    border: 0.2vh solid rgb(0,0,0);
+}
+.step input {
+    height: 50%;
+    background-color: var(--accent_kleur_2);
+    border: none;
+    width: 100%;
 }
