@@ -24,7 +24,19 @@ router.get('/', (req, res) => {
 
 // route for when we want to add a recipe
 router.get("/add", (req, res) => {
-    res.render("recipeAdd.ejs", {});
+    res.render("recipeAdd.ejs", 
+    {recipe: {
+                "Recept": {
+                    "Foto": "",
+                    "Naam": "",
+                    "Prijs": "",
+                    "personen": "",
+                    "Ingredienten": "",
+                    "Stappen": [],
+                    "tags": []
+                }
+            }
+    });
 });
 router.post("/add", (req, res) => {
     const newRecipe = req.body;

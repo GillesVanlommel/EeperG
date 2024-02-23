@@ -15,8 +15,7 @@
                 <img src="/icons/image.png">
             </div>
             <%- include("../partial/dragDrop.ejs") %>
-            <input class="titleBox">
-                <input type="text" name="Naam" placeholder="Naam" value="<%= recipe.Recept.Naam %>">
+                <input type="text" name="Naam"  placeholder="Naam"  value="<%= recipe.Recept.Naam %>">
                 <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
                 <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal 
                             lijkt me gwn een handig weetje. kzou mensen da zelf laten invullen gwn en da ze da dan ma aanpassen zoals ze willen
@@ -26,7 +25,7 @@
                 <div class="bottomLeft">
                     <%- include("../partial/userWidget.ejs") %>
                     <div class="ingredBox">
-                        <input type="text" name="Ingredienten" placeholder="Ingredienten">
+                        <input type="text" name="Ingredienten" placeholder="Ingredienten" value="<%= JSON.stringify(recipe.Recept.Ingredienten)%>">
                     </div>
                     
                 </div>
@@ -52,9 +51,11 @@
                         <button type="button" id="iconButton" onclick="clickedTag(event)"><img src="/icons/schaaldieren.png" title="Schaaldieren" id="icon"></button>
                     </div>
                     <div class="stepBox", id="stepBox">
+                        <% recipe.Recept.Stappen.forEach(step => { %>
                         <div class="step">
-                            <input type="text" name="Step" placeholder="Typ hier een nieuwe stap"></input>
-                        </div>
+                                <input type="text" name="Step" placeholder="Typ hier een nieuwe stap" value="<%= step %>"></input>
+                            </div>
+                        <% }) %>
                     </div>
                     <button type="button" onclick="insertStep()">Add Step!!! ツ</button>
                     <%- include("../partial/insertStep.ejs") %>
