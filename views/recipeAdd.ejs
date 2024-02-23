@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/styles/styleAddPage.css">
     <title>Document</title>
 </head>
-
+<!-- TODO: editen werkt vanaf nu. Maar nog ni alle dingen zijn dus er komt bv nog geen foto.
+verder werkt die if ni vanonder bij de form of da moe /edit of /add moe doen MA IK SNAP ECHT NI WAAROM 
+EN IK BEN ER LIJP VAN AAN HET WORDEN-->
 <body>
     <form action="/recipes/add" method="post">
         <div class="main">
@@ -62,8 +64,17 @@
                 </div>
             </div>
             <div class="submitBox">
-                <input type="submit" value="Voeg toe!">
-            </div>
+                <% if (recipe.Recept.Naam !== "") { %>
+                  <form action="/edit" method="post">
+                    <input type="submit" value="Voeg toe!">
+                  </form>
+                <% } else { %>
+                  <form action="/add" method="post">
+                    jfmkdsq
+                    <input type="submit" value="Voeg toe!">
+                  </form>
+                <% } %>
+              </div>
         </div>
     </form>
 </body>
