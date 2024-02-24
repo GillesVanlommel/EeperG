@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="/styles/styleAddPage.css">
     <title>Document</title>
 </head>
-<!-- TODO: editen werkt vanaf nu. Maar nog ni alle dingen zijn dus er komt bv nog geen foto.
-verder werkt die if ni vanonder bij de form of da moe /edit of /add moe doen MA IK SNAP ECHT NI WAAROM 
-EN IK BEN ER LIJP VAN AAN HET WORDEN-->
+<!-- TODO: editen werkt vanaf nu. 
+    1. Toevoegen van een foto werkt niet. ik denk da ik iets kapot heb gemaakt want er crasht iets in de js nu
+    2. Tags werken nog niet dus als je nu edit dan verwijdert die de huidige tags uit de lijst waardoor website crasht want "tags": ... staat ni meer in de json voor da recept-->
 <body>
-    <form action="/recipes/add" method="post">
+    <form action="<%= recipe.Recept.Naam !== '' ? '/recipes/edit' : 'recipes/add' %>" method="post">
         <div class="main">
-            <div id="drag_drop", ondrop="dropped(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)">
-                <img src="/icons/image.png">
+            <div id="drag_drop"
+             ondrop="dropped(event)" 
+             ondragover="dragOverHandler(event)" 
+             ondragleave="dragLeaveHandler(event)"
+             style="background-image: url('<%= recipe.Recept.Foto %>');">
             </div>
+                <input type="hidden" name="Foto" id="Foto">
+                <img src="<%= recipe.Recept.Naam !== '' ? '' : '/icons/image.png'%>">
             <%- include("../partial/dragDrop.ejs") %>
                 <input type="text" name="Naam"  placeholder="Naam"  value="<%= recipe.Recept.Naam %>">
                 <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
-                <!-- TODO: wa doen we me prijs? is heel dependant en ga steeds blijve stijge enal 
-                            lijkt me gwn een handig weetje. kzou mensen da zelf laten invullen gwn en da ze da dan ma aanpassen zoals ze willen
-                -->
             </div>
             <div class="bottom">
                 <div class="bottomLeft">
@@ -55,7 +57,7 @@ EN IK BEN ER LIJP VAN AAN HET WORDEN-->
                     <div class="stepBox", id="stepBox">
                         <% recipe.Recept.Stappen.forEach(step => { %>
                         <div class="step">
-                                <input type="text" name="Step" placeholder="Typ hier een nieuwe stap" value="<%= step %>"></input>
+                                <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap" value="<%= step %>"></input>
                             </div>
                         <% }) %>
                     </div>
@@ -64,17 +66,8 @@ EN IK BEN ER LIJP VAN AAN HET WORDEN-->
                 </div>
             </div>
             <div class="submitBox">
-                <% if (recipe.Recept.Naam !== "") { %>
-                  <form action="/edit" method="post">
-                    <input type="submit" value="Voeg toe!">
-                  </form>
-                <% } else { %>
-                  <form action="/add" method="post">
-                    jfmkdsq
-                    <input type="submit" value="Voeg toe!">
-                  </form>
-                <% } %>
-              </div>
+                <input type="submit" value="Voeg toe!">
+            </div>
         </div>
     </form>
 </body>

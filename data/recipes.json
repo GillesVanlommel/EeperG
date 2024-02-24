@@ -202,20 +202,15 @@
   },
   {
     "Recept": {
-      "Foto": "https://th.bing.com/th?id=ORMS.bae7d6468fcf57b8287d6c23cd163ac2&pid=Wdp&w=612&h=304&qlt=90&c=1&rs=1&dpr=1.25&p=0",
+      "Foto": "",
       "Naam": "De goat",
       "Prijs": "1000000€",
-      "personen": "4",
+      "Foto": "https://images.vrt.be/dako2017_1600s_j75/2019/03/15/37878604-4713-11e9-abcc-02b7b76bf47f.jpg",
       "Ingredienten": "mannelijkheid",
       "Stappen": [
-        "Koop een geit",
+        "Koop 2 geiten",
         "Kook de geit",
         "Eet de geit"
-      ],
-      "tags": [
-        "geit",
-        "vlees",
-        "hoofdgerecht"
       ]
     }
   }

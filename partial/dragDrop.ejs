@@ -11,6 +11,9 @@
                 dropzone.style.backgroundImage = `url('${e.target.result}')`; //zet de achtergrond van de div naar de gedropte foto
                 dropzone.querySelector('img').style.display = 'none'; //verwijder bestaande foto
                 dropzone.textContent = ''  //verwijder bestaande tekst
+
+                // voeg de foto toe aan de form
+                document.getElementById("Foto").value = e.target.result;
             };
 
             reader.readAsDataURL(files[0]); // het echte uitlezen, als hij klaar is wordt onload getriggerd
