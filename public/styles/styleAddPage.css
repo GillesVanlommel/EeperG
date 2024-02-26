@@ -93,6 +93,7 @@ body {
     background-color: var(--accent_kleur_5);
     border-radius: 1vh;
     border: none;
+    cursor: pointer;
 }
 .submitBox {
     background-color: deeppink;
@@ -116,3 +117,13 @@ body {
     border: none;
     width: 100%;
 }
+
+/* Hide the default radio input */
+input[type="checkbox"] {
+display: none;
+}
+
+/* Style the label when the radio input is checked */
+input[type="checkbox"]:checked + #iconButton {
+    background-color: var(--accent_kleur_1);
+  }
