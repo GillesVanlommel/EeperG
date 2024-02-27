@@ -1,10 +1,15 @@
+<div id="drag_drop" ondrop="dropped(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)"
+    style="background-image: url('<%= recipe.Recept.Foto %>');">
+    <img src="<%= recipe.Recept.Naam !== '' ? '' : '/icons/image.png'%>">
+</div>
+
 <script>
     function dropped(event) {
         event.preventDefault(); //normaal als ge file dropped opent die da in een nieuwe tab, dit houd da tegen
-        
+
         const files = event.dataTransfer.files; //getter van de gedropte files
 
-        if(files.length === 1) {
+        if (files.length === 1) {
             const reader = new FileReader(); //maak filereader object
             reader.onload = function (e) { //onload triggered als de reader gelezen heeft
                 const dropzone = document.getElementById('drag_drop'); //neem de drag_drop div
@@ -35,7 +40,7 @@
     #drag_drop {
         background-color: var(--secundaire_kleur);
         width: 100%;
-        border-style:dashed;
+        border-style: dashed;
         border-radius: 15px;
         border: 2px solid var(--accent_kleur_2);
         height: 43vh;
@@ -43,12 +48,14 @@
         background-position: center;
         background-repeat: no-repeat;
     }
+
     #drag_drop img {
         height: 20%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
+
     #drag_drop.dragover {
         background-color: var(--accent_kleur_2);
     }

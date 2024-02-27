@@ -202,15 +202,18 @@
   },
   {
     "Recept": {
-      "Foto": "",
+      "Foto": "https://images.vrt.be/dako2017_1600s_j75/2019/03/15/37878604-4713-11e9-abcc-02b7b76bf47f.jpg",
       "Naam": "De goat",
       "Prijs": "1000000€",
-      "Foto": "https://images.vrt.be/dako2017_1600s_j75/2019/03/15/37878604-4713-11e9-abcc-02b7b76bf47f.jpg",
-      "Ingredienten": "mannelijkheid",
+      "Ingredienten": "\"mannelijkheid\"",
       "Stappen": [
         "Koop 2 geiten",
         "Kook de geit",
         "Eet de geit"
+      ],
+      "tags": [
+        "melk",
+        "hoofdgerecht"
       ]
     }
   }
