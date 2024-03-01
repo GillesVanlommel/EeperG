@@ -1,4 +1,4 @@
-<div class="persBox">
+<div id="persBox">
     <button type="button" class="personButton" onclick="changePerson('1')"><img src="/icons/person_blank.png" id="0" class="personButtonImg"></button>
     <button type="button" class="personButton" onclick="changePerson('2')"><img src="/icons/person_blank.png" id="1" class="personButtonImg"></button>
     <button type="button" class="personButton" onclick="changePerson('3')"><img src="/icons/person_blank.png" id="2" class="personButtonImg"></button>
@@ -20,14 +20,14 @@
     }
 </script>
 <style>
-    .persBox {
+    #persBox {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-color: var(--accent_kleur_4);
-        border-radius: 0.4vh;
-        border: 0.2vh solid rgb(0,0,0);
+        background-color: var(--accent_kleur_3);
+        border-radius: var(--border_radius);
+        border: 0.1vh solid var(--accent_kleur_2);
     }
 
     .personButton {

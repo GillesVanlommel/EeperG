@@ -9,23 +9,43 @@
     --accent_kleur_5: rgb(204, 233, 199);
     --tekst_kleur_1: rgb(255, 255, 255);
     --tekst_kleur_2: rgb(90, 90, 90);
-  }
+    --border_radius: 1vh;
+}
+
+/* Algemene styles */
+.genericBox {
+    background-color: var(--accent_kleur_3);
+    border-radius: var(--border_radius);
+    border: 0.1vh solid var(--accent_kleur_2);
+}
+input {
+    padding-left: 1vh;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 95%;
+}
+input:focus {
+    outline: none;
+}
 body {
     margin: 0px;
     background-image: url("/bg.png");
     
 }
-.main {
+
+/* Specifieke styles*/
+#main {
     text-align: center;
     margin: auto;
     background-color: var(--primaire_kleur);
-    width: 80%;
+    width: 85%;
 }
 #drag_drop {
     background-color: var(--secundaire_kleur);
     width: 100%;
     border-style:dashed;
-    border-radius:  0 0 15px 15px;
+    border-radius:  0 0 var(--border_radius) var(--border_radius);
     border: 2px solid var(--accent_kleur_2);
     height: 43vh;
     background-size: cover;
@@ -38,49 +58,41 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-.titleBox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: var(--secundaire_kleur);
-    border: var(--accent_kleur_2);
+#titleBox {
     width: 100%;
-    height: 100px;
+    height: 6vh;
 }
-.bottom {
+#bottom {
     display: flex;
     min-height: 800px;
     width: 100%;
 }
-.bottomLeft {
+#bottomLeft {
     flex: 0.3;
     display: flex;
     flex-direction: column;
 }
-.persBox {
-    background-color: var(--secundaire_kleur);
-    width: 100%;
-    height: 100px;
+
+#spacer {
+    height: 1px;
+    flex: 0.05;
 }
-.ingredBox {
-    background-color: violet;
+
+#ingredBox {
     width: 100%;
     min-height: 500px;
 }
-.bottomRight {
-    flex: 0.7;
+#bottomRight {
+    flex: 0.65;
 }
-.tagsBox {
-    background-color: var(--accent_kleur_4);
-    border-radius: 0.4vh;
-    border: 0.2vh solid rgb(0,0,0);
+#tagsBox { 
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: fit-content;
-    min-height: 8vh;
+    height: 8vh;
 }
-.stepBox {
+#stepBox {
     width: 100%;
     height: fit-content;
 }
@@ -90,8 +102,8 @@ body {
 #iconButton {
     height: 5vh;
     width: 5vh;
-    background-color: var(--accent_kleur_5);
-    border-radius: 1vh;
+    background-color: var(--accent_kleur_2);
+    border-radius: var(--border_radius);
     border: none;
     cursor: pointer;
 }
@@ -108,14 +120,8 @@ body {
     margin: 10px;
     height: 5vh;
     background-color: var(--secundaire_kleur);
-    border-radius: 0.4vh;
+    border-radius: var(--border_radius);
     border: 0.2vh solid rgb(0,0,0);
-}
-.step input {
-    height: 50%;
-    background-color: var(--accent_kleur_2);
-    border: none;
-    width: 100%;
 }
 
 /* Hide the default radio input */
@@ -127,3 +133,13 @@ display: none;
 input[type="checkbox"]:checked + #iconButton {
     background-color: var(--accent_kleur_1);
   }
+
+#stepButton {
+    width: 5vh;
+    height: 5vh;
+    color: var(--accent_kleur_1);
+    border-radius: var(--border_radius);
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4vh;
+}
