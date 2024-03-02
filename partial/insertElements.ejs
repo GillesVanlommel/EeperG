@@ -1,0 +1,25 @@
+<!-- Deze code voegt een element structuur toe in een div, gebruikt door stepBox en ingredBox -->
+
+<script>
+    function insertStep() {
+        console.log('insertStep');
+        const element = document.getElementById('stepBox');
+
+        const newStep = document.createElement('div');
+        newStep.className = 'step';
+
+        const newInput = document.createElement('input');
+        newInput.type = 'text';
+        newInput.name = 'Step';
+        newInput.placeholder = 'Typ hier een nieuwe stap';
+        
+        newStep.appendChild(newInput);
+        element.appendChild(newStep);
+    }
+</script>
+
+<!-- 
+<div class="step">
+    <input type="text" name="Step" placeholder="Typ hier een nieuwe stap"></input>
+</div>
+`; -->

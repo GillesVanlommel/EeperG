@@ -11,12 +11,12 @@
 <!-- TODO: editen werkt vanaf nu. 
     1. Toevoegen van een foto werkt niet. ik denk da ik iets kapot heb gemaakt want er crasht iets in de js nu
     2. Tags werken nog niet dus als je nu edit dan verwijdert die de huidige tags uit de lijst waardoor website crasht want "tags": ... staat ni meer in de json voor da recept-->
-
+<!-- TODO: tags werken nu wel maar ik heb edit kapot gemaakt lmao -->
 <body>
     <form action="<%= recipe.Recept.Naam !== '' ? '/recipes/edit' : '/recipes/add' %>" method="post">
         <div id="main">
             <%- include("../partial/dragDrop.ejs") %>
-                <input type="hidden" name="Foto" id="Foto"> <!-- hidden input field to store the image url -->
+                <input type="hidden" name="Foto" id="Foto">
             <div class="genericBox">
                 <input type="text" name="Naam" placeholder="Naam" value="<%= recipe.Recept.Naam %>">
                 <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
@@ -33,69 +33,12 @@
                 <div id="spacer"></div>
                 <div id="bottomRight">
                     <div id="tagsBox" class="genericBox">
-                        <!-- TODO: link knoppen aan output
-                            TODO: koppen moete ook toggle type zijn : ik denk da da kan door gwn die knoppen hier onder te veranderen in <input type="radio"> en dan is da eig een toggle en 
-                        gwn me css dan aan te passen da da eruit ziet als die icoontjes-->
-                        <input type="checkbox" id="cbInput1" name="cbGroup">
-                        <label for="cbInput1" id="iconButton">
-                            <img src="/icons/vegan.png" title="Vegan" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput2" name="cbGroup">
-                        <label for="cbInput2" id="iconButton">
-                            <img src="/icons/ei.png" title="Ei" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput3" name="cbGroup">
-                        <label for="cbInput3" id="iconButton">
-                            <img src="/icons/gluten.png" title="Gluten" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput4" name="cbGroup">
-                        <label for="cbInput4" id="iconButton">
-                            <img src="/icons/lupine.png" title="Lupine" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput5" name="cbGroup">
-                        <label for="cbInput5" id="iconButton">
-                            <img src="/icons/melk.png" title="Melk" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput6" name="cbGroup">
-                        <label for="cbInput6" id="iconButton">
-                            <img src="/icons/sesamzaad.png" title="Sesamzaad" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput7" name="cbGroup">
-                        <label for="cbInput7" id="iconButton">
-                            <img src="/icons/noten.png" title="Noten" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput8" name="cbGroup">
-                        <label for="cbInput8" id="iconButton">
-                            <img src="/icons/zwaveldioxide.png" title="zwaveldioxide" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput9" name="cbGroup">
-                        <label for="cbInput9" id="iconButton">
-                            <img src="/icons/selderij.png" title="Selderij" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput10" name="cbGroup">
-                        <label for="cbInput10" id="iconButton">
-                            <img src="/icons/pinda.png" title="Pinda" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput11" name="cbGroup">
-                        <label for="cbInput11" id="iconButton">
-                            <img src="/icons/mosterd.png" title="Mosterd" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput12" name="cbGroup">
-                        <label for="cbInput12" id="iconButton">
-                            <img src="/icons/vis.png" title="Vis" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput13" name="cbGroup">
-                        <label for="cbInput13" id="iconButton">
-                            <img src="/icons/weekdieren.png" title="Weekdieren" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput14" name="cbGroup">
-                        <label for="cbInput14" id="iconButton">
-                            <img src="/icons/soja.png" title="Soja" id="icon">
-                        </label>
-                        <input type="checkbox" id="cbInput15" name="cbGroup">
-                        <label for="cbInput15" id="iconButton">
-                            <img src="/icons/schaaldieren.png" title="Schaaldieren" id="icon">
-                        </label>
+                        <% for (let i = 0; i < tags.length; i++) { %>
+                            <input type="checkbox" id="cbInput<%= i + 1 %>" name="CB[<%= tags[i] %>]" />
+                            <label for="cbInput<%= i + 1 %>" id="iconButton">
+                                <img src="/icons/<%= tags[i] %>.png" title="<%= tags[i] %>" id="icon" />
+                            </label>
+                        <% } %>
                     </div>
                     <div class="genericBox" , id="stepBox">
                         <% recipe.Recept.Stappen.forEach(step=> { %>
@@ -105,15 +48,14 @@
                             </div>
                             <% }) %>
                         <button id="stepButton" type="button" onclick="insertStep()">+</button>
-                        <%- include("../partial/insertStep.ejs") %>
+                        <%- include("../partial/insertElements.ejs") %> <!--  -->
                     </div>
                 </div>
             </div>
             <div class="genericBox" id="submitBox">
-                <input type="submit" value="Voeg toe!">
+                <button id="submitButton"> YOOOOOOOOOOOOOO <br><br>rreere</button>
             </div>
         </div>
     </form>
 </body>
-
 </html>

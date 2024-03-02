@@ -13,6 +13,9 @@
 }
 
 /* Algemene styles */
+* {
+    box-sizing: border-box;
+}
 .genericBox {
     background-color: var(--accent_kleur_3);
     border-radius: var(--border_radius);
