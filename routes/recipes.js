@@ -64,7 +64,7 @@ router.post("/add", (req, res) => {
             "Prijs": req.body.Prijs,
             "personen": req.body.personen,
             "Ingredienten": req.body.Ingredienten,
-            "Stappen": [],
+            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [],
             "tags": req.body.CB || {}
         }
     }
