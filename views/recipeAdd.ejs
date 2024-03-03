@@ -24,7 +24,7 @@
                 <div id="bottomLeft">
                     <div id="persBox" class="genericBox">
                         <button id="minusButton" type="button" onclick="changeValue('minus')">-</button>
-                        <input id="personenInput" type="text" name="Personen" value="<%= recipe.Recept.Personen %>">
+                        <input id="personenInput" type="text" placeholder=1 name="Personen" value="<%= recipe.Recept.Personen %>">
                         <button id="plusButton" type="button" onclick="changeValue('plus')">+</button>
                     </div>
                     <script>
@@ -67,13 +67,13 @@
                     </div>
                     <div class="genericBox" , id="stepBox">
                         <button id="stepButton" type="button" onclick="insertStep()">+</button>
-                        <% recipe.Recept.Stappen.forEach(step=> { %>
-                            <div class="step"> <!-- voor edit -->
-                                <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"
-                                    value="<%= step %>"></input>
-                            </div>
-                        <% }) %>
-                        <div class="step"> <!-- zodat er altijd al een lege input staat -->
+                            <% recipe.Recept.Stappen.forEach(step=> { %>
+                                <div class="step"> <!-- voor edit -->
+                                    <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"
+                                        value="<%= step %>"></input>
+                                </div>
+                            <% }) %>
+                        <div class="step"> <!-- zodat er altijd al een lege input staat TODO: hierdoor slaagt die wel een lege string op bij stappe-->
                             <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"></input>
                         </div>
                         <%- include("../partial/insertElements.ejs") %>
