@@ -1,34 +1,51 @@
 [
   {
     "Recept": {
+      "Foto": "https://belmansrecycling.be/wp-content/uploads/Belmans-Recycling-Materiaux-Papier-et-Carton.jpg",
       "Naam": "Karton met gefrituurde kalk",
       "Prijs": "None",
-      "Personen": 2.5,
-      "Ingredienten": {
-        "Cement": 10,
-        "Zwavelzuur": "Nipje",
-        "knoflook": 1,
-        "wc water": "emmer",
-        "karton met wasco": "0.5m²",
-        "Ui": 1,
-        "Knoflook": 2,
-        "Rundergehakt": 500,
-        "Tomatenpuree": "Blikje",
-        "Tomatensaus": "Fles",
-        "Wortel": 2,
-        "Bleekselderij": 2,
-        "Oregano": "Theelepel",
-        "Basilicum": "Handvol",
-        "Parmezaanse kaas": "Naar smaak"
-      },
+      "Personen": "2.5",
+      "Ingredienten": [
+        "{\"Cement\":10,\"Zwavelzuur\":\"Nipje\",\"knoflook\":1,\"wc water\":\"emmer\",\"karton met wasco\":\"0.5m²\",\"Ui\":1,\"Knoflook\":2,\"Rundergehakt\":500,\"Tomatenpuree\":\"Blikje\",\"Tomatensaus\":\"Fles\",\"Wortel\":2,\"Bleekselderij\":2,\"Oregano\":\"Theelepel\",\"Basilicum\":\"Handvol\",\"Parmezaanse kaas\":\"Naar smaak\"}",
+        "Cement",
+        "10",
+        "Zwavelzuur",
+        "Nipje",
+        "knoflook",
+        "1",
+        "wc water",
+        "emmer",
+        "karton met wasco",
+        "0.5m²",
+        "Ui",
+        "1",
+        "Knoflook",
+        "2",
+        "Rundergehakt",
+        "500",
+        "Tomatenpuree",
+        "Blikje",
+        "Tomatensaus",
+        "Fles",
+        "Wortel",
+        "2",
+        "Bleekselderij",
+        "2",
+        "Oregano",
+        "Theelepel",
+        "Basilicum",
+        "Handvol",
+        "Parmezaanse kaas",
+        "Naar smaak"
+      ],
       "Stappen": [
         "Los het karton op in een grote emmer met water. Roer goed totdat het karton een papachtige consistentie heeft bereikt.",
         "Voeg een nipje zwavelzuur toe aan het kartonmengsel. Let op: zwavelzuur is een bijtende stof, dus wees voorzichtig bij het hanteren ervan.",
         "Giet het cement langzaam in een pombak terwijl je blijft roeren. Zorg ervoor dat het cement gelijkmatig verdeeld is in de bak.",
         "Proef het kartonmengsel om te bepalen of het zout nodig heeft. Voeg indien nodig een snufje zout toe en meng goed.",
-        "Neem een moment om te ontspannen en geniet van je creatie. Laat jezelf neervallen en bewonder het resultaat van je harde werk."
+        "Neem een moment om te ontspannen en geniet van je creatie. Laat jezelf neervallen en bewonder het resultaat van je harde werk.",
+        ""
       ],
-      "Foto": "https://belmansrecycling.be/wp-content/uploads/Belmans-Recycling-Materiaux-Papier-et-Carton.jpg",
       "tags": {
         "vegan": "on",
         "ei": "on",
@@ -44,8 +61,7 @@
         "vis": "on",
         "weekdieren": "on",
         "soja": "on",
-        "schaaldieren": "on",
-        "desert": "on"
+        "schaaldieren": "on"
       }
     }
   },
@@ -209,7 +225,9 @@
       "Naam": "Frieren<3",
       "Prijs": "9999999999999",
       "Personen": "500",
-      "Ingredienten": "\"\\\"{\\\\\\\"Fern\\\\\\\":<3,}\\\"\"",
+      "Ingredienten": {
+        "Fern": "<3"
+      },
       "Stappen": [
         "Saiko"
       ],

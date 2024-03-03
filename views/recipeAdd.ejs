@@ -40,8 +40,17 @@
                     </script>
 
                     <div class="genericBox" id="ingredBox">
-                        <input type="text" name="Ingredienten" placeholder="Ingredienten"
-                            value="<%= JSON.stringify(recipe.Recept.Ingredienten)%>">
+                        <button id="stepButton" type="button" onclick="insertIngredient()">+</button>       
+                        <% Object.entries(recipe.Recept.Ingredienten).forEach(([key, value]) => { %>
+                            <div class="ingredient">
+                                <div class="ingredientKey">
+                                    <input type="text" name="Ingredient" placeholder="Ingredient" value="<%= key %>">
+                                </div>
+                                <div class="ingredientValue">
+                                    <input type="text" name="Hoeveelheid" placeholder="Hoeveelheid" value="<%= value %>">
+                                </div>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
                 <div id="spacer"></div>
@@ -57,14 +66,17 @@
                         <% } %>
                     </div>
                     <div class="genericBox" , id="stepBox">
+                        <button id="stepButton" type="button" onclick="insertStep()">+</button>
                         <% recipe.Recept.Stappen.forEach(step=> { %>
-                            <div class="step">
+                            <div class="step"> <!-- voor edit -->
                                 <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"
                                     value="<%= step %>"></input>
                             </div>
-                            <% }) %>
-                        <button id="stepButton" type="button" onclick="insertStep()">+</button>
-                        <%- include("../partial/insertElements.ejs") %> <!--  -->
+                        <% }) %>
+                        <div class="step"> <!-- zodat er altijd al een lege input staat -->
+                            <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"></input>
+                        </div>
+                        <%- include("../partial/insertElements.ejs") %>
                     </div>
                 </div>
             </div>

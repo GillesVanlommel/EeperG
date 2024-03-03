@@ -47,9 +47,9 @@ router.get("/add", (req, res) => {
                             "Naam": "",
                             "Prijs": "",
                             "Personen": "",
-                            "Ingredienten": "",
+                            "Ingredienten": {},
                             "Stappen": [],
-                            "tags": []
+                            "tags": {}
                             }
                         }
     res.locals.tags = tags;
@@ -63,12 +63,17 @@ router.post("/add", (req, res) => {
             "Naam": req.body.Naam || "Naamloos recept",
             "Prijs": req.body.Prijs,
             "Personen": req.body.Personen || 1,
-            "Ingredienten": req.body.Ingredienten,
+            "Ingredienten": {},
             "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
             "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
         }
     }
-        
+    
+    req.body.Ingredient.forEach((ingredient, index) => {
+        console.log(ingredient);
+        newRecipe.Recept.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
+    });
+
     recipes.push(newRecipe);
     
     fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
@@ -100,15 +105,20 @@ router.post("/edit", (req, res) => {
     const recipeName = req.body.Naam;
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
     const updatedRecipe = {
-            "Foto": req.body.Foto, //TODO: default fototje in public mss
-            "Naam": req.body.Naam || "Naamloos recept",
-            "Prijs": req.body.Prijs,
-            "Personen": req.body.Personen || 1,
-            "Ingredienten": req.body.Ingredienten,
-            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
-            "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
-        };
+        "Foto": req.body.Foto, //TODO: default fototje in public mss
+        "Naam": req.body.Naam || "Naamloos recept",
+        "Prijs": req.body.Prijs,
+        "Personen": req.body.Personen || 1,
+        "Ingredienten": {},
+        "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
+        "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
+    };
     
+    req.body.Ingredient.forEach((ingredient, index) => {
+        console.log(ingredient);
+        updatedRecipe.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
+    });
+
     if (!recipe) {
         return res.status(404).send('Recipe not found');
     }

@@ -153,3 +153,7 @@ input[type="checkbox"]:checked + #iconButton {
     align-items: center;
     width: 100%;
 }
+
+.ingredient {
+    display: flex;
+}

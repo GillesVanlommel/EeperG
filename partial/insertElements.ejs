@@ -2,7 +2,6 @@
 
 <script>
     function insertStep() {
-        console.log('insertStep');
         const element = document.getElementById('stepBox');
 
         const newStep = document.createElement('div');
@@ -16,10 +15,34 @@
         newStep.appendChild(newInput);
         element.appendChild(newStep);
     }
-</script>
 
-<!-- 
-<div class="step">
-    <input type="text" name="Step" placeholder="Typ hier een nieuwe stap"></input>
-</div>
-`; -->
+
+    function insertIngredient() {
+        const element = document.getElementById("ingredBox");
+
+        const newIngredient = document.createElement("div");
+        newIngredient.className = "ingredient";
+
+        const newIngredientKey = document.createElement("div");
+        newIngredientKey.className = "ingredientKey";
+
+        const newIngredientValue = document.createElement("div");
+        newIngredientValue.className = "ingredientValue";
+
+        const newInputKey = document.createElement("input");
+        newInputKey.type = "text";
+        newInputKey.name = "Ingredient";
+        newInputKey.placeholder = "Ingredient";
+
+        const newInputValue = document.createElement("input");
+        newInputValue.type = "text";
+        newInputValue.name = "Hoeveelheid";
+        newInputValue.placeholder = "Hoeveelheid";
+
+        newIngredientKey.appendChild(newInputKey);
+        newIngredientValue.appendChild(newInputValue);
+        newIngredient.appendChild(newIngredientKey);
+        newIngredient.appendChild(newIngredientValue);
+        element.appendChild(newIngredient);
+    }
+</script>
