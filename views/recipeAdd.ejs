@@ -23,10 +23,21 @@
             <div id="bottom">
                 <div id="bottomLeft">
                     <div id="persBox" class="genericBox">
-                        <button id="minusButton" type="button">-</button> <!-- TODO: knoppen doen nog niks -->
+                        <button id="minusButton" type="button" onclick="changeValue('minus')">-</button>
                         <input id="personenInput" type="text" name="Personen" value="<%= recipe.Recept.Personen %>">
-                        <button id="plusButton" type="button">+</button>
+                        <button id="plusButton" type="button" onclick="changeValue('plus')">+</button>
                     </div>
+                    <script>
+                        function changeValue(type) {
+                            const input = document.getElementById('personenInput');
+                            const value = parseInt(input.value);
+                            if (type === 'plus') {
+                                input.value = value + 1;
+                            } else if (type === 'minus') {
+                                input.value = value - 1;
+                            }
+                        }
+                    </script>
 
                     <div class="genericBox" id="ingredBox">
                         <input type="text" name="Ingredienten" placeholder="Ingredienten"
