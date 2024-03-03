@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO: actually de head partial gebruiken overal somehow, rekening houwe me styles  -->
 
 <head>
     <meta charset="UTF-8">
@@ -24,15 +23,15 @@
             <div id="bottom">
                 <div id="bottomLeft">
                     <div id="persBox" class="genericBox">
-                        <button id="minusButton" type="button">-</button>
+                        <button id="minusButton" type="button">-</button> <!-- TODO: knoppen doen nog niks -->
                         <input id="personenInput" type="text" name="Personen" value="<%= recipe.Recept.Personen %>">
                         <button id="plusButton" type="button">+</button>
                     </div>
+
                     <div class="genericBox" id="ingredBox">
                         <input type="text" name="Ingredienten" placeholder="Ingredienten"
                             value="<%= JSON.stringify(recipe.Recept.Ingredienten)%>">
                     </div>
-
                 </div>
                 <div id="spacer"></div>
                 <div id="bottomRight">
@@ -59,7 +58,7 @@
                 </div>
             </div>
             <div class="genericBox" id="submitBox">
-                <button id="submitButton"> YOOOOOOOOOOOOOO <br><br>rreere</button>
+                <button id="submitButton">Opslaan</button>
             </div>
         </div>
     </form>
