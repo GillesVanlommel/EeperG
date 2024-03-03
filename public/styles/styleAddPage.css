@@ -146,3 +146,10 @@ input[type="checkbox"]:checked + #iconButton {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 4vh;
 }
+
+#persBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

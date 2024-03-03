@@ -16,27 +16,33 @@
     <form action="<%= recipe.Recept.Naam !== '' ? '/recipes/edit' : '/recipes/add' %>" method="post">
         <div id="main">
             <%- include("../partial/dragDrop.ejs") %>
-                <input type="hidden" name="Foto" id="Foto">
+                <input type="hidden" name="Foto" id="Foto" value="<%= recipe.Recept.Foto %>">
             <div class="genericBox">
                 <input type="text" name="Naam" placeholder="Naam" value="<%= recipe.Recept.Naam %>">
                 <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
             </div>
             <div id="bottom">
                 <div id="bottomLeft">
-                    <%- include("../partial/userWidget.ejs") %>
-                        <div class="genericBox" id="ingredBox">
-                            <input type="text" name="Ingredienten" placeholder="Ingredienten"
-                                value="<%= JSON.stringify(recipe.Recept.Ingredienten)%>">
-                        </div>
+                    <div id="persBox" class="genericBox">
+                        <button id="minusButton" type="button">-</button>
+                        <input id="personenInput" type="text" name="Personen" value="<%= recipe.Recept.Personen %>">
+                        <button id="plusButton" type="button">+</button>
+                    </div>
+                    <div class="genericBox" id="ingredBox">
+                        <input type="text" name="Ingredienten" placeholder="Ingredienten"
+                            value="<%= JSON.stringify(recipe.Recept.Ingredienten)%>">
+                    </div>
 
                 </div>
                 <div id="spacer"></div>
                 <div id="bottomRight">
                     <div id="tagsBox" class="genericBox">
                         <% for (let i = 0; i < tags.length; i++) { %>
-                            <input type="checkbox" id="cbInput<%= i + 1 %>" name="CB[<%= tags[i] %>]" />
+                            <% const tag = tags[i]; %>
+                            <% const isChecked = recipe.Recept.tags && recipe.Recept.tags[tag] ? 'checked' : ''; %>
+                            <input type="checkbox" id="cbInput<%= i + 1 %>" name="CB[<%= tag %>]" <%= isChecked %> />
                             <label for="cbInput<%= i + 1 %>" id="iconButton">
-                                <img src="/icons/<%= tags[i] %>.png" title="<%= tags[i] %>" id="icon" />
+                                <img src="/icons/<%= tag %>.png" title="<%= tag %>" id="icon" />
                             </label>
                         <% } %>
                     </div>

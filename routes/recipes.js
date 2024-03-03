@@ -46,7 +46,7 @@ router.get("/add", (req, res) => {
                             "Foto": "",
                             "Naam": "",
                             "Prijs": "",
-                            "personen": "",
+                            "Personen": "",
                             "Ingredienten": "",
                             "Stappen": [],
                             "tags": []
@@ -59,13 +59,13 @@ router.get("/add", (req, res) => {
 router.post("/add", (req, res) => {
     const newRecipe = {
         "Recept": {
-            "Foto": req.body.Foto,
-            "Naam": req.body.Naam,
+            "Foto": req.body.Foto, //TODO: default fototje in public mss
+            "Naam": req.body.Naam || "Naamloos recept",
             "Prijs": req.body.Prijs,
-            "personen": req.body.personen,
+            "Personen": req.body.Personen || 1,
             "Ingredienten": req.body.Ingredienten,
-            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [],
-            "tags": req.body.CB || {}
+            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
+            "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
         }
     }
         
@@ -93,12 +93,22 @@ router.get("/edit/:Naam", (req, res) => {
     const recipeName = req.params.Naam;
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
     const index = recipes.indexOf(recipe);
-    res.render("recipeAdd.ejs", {recipe});
+    res.locals.recipe = recipe;
+    res.locals.tags = tags;
+    res.render("recipeAdd.ejs");
 });
 router.post("/edit", (req, res) => {
     const recipeName = req.body.Naam;
-    const updatedRecipe = req.body;
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
+    const updatedRecipe = {
+            "Foto": req.body.Foto, //TODO: default fototje in public mss
+            "Naam": req.body.Naam || "Naamloos recept",
+            "Prijs": req.body.Prijs,
+            "Personen": req.body.Personen || 1,
+            "Ingredienten": req.body.Ingredienten,
+            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
+            "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
+        };
     
     if (!recipe) {
         return res.status(404).send('Recipe not found');
@@ -118,64 +128,6 @@ router.post("/delete/:Naam", (req, res) => {
     const index = recipes.indexOf(recipe);
     recipes.splice(index, 1);
     fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
-    res.redirect("/recipes");
-});
-
-// route for when we want to edit a recipe
-//TODO: zorgen dat de edit pagina alvast de huidige waardes van het recept laat zien
-router.get("/edit/:Naam", (req, res) => {
-    const recipeName = req.params.Naam;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
-    const index = recipes.indexOf(recipe);
-    res.render("recipeAdd.ejs", {recipe});
-});
-router.post("/edit", (req, res) => {
-    const recipeName = req.body.Naam;
-    const updatedRecipe = req.body;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
-    
-    if (!recipe) {
-        return res.status(404).send('Recipe not found');
-    }
-    
-    recipe.Recept = updatedRecipe;
-    fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
-    console.log("Recipe has been updated");
-    
-    res.redirect("/recipes");
-});
-
-// route for when we want to delete a recipe
-router.post("/delete/:Naam", (req, res) => {
-    const recipeName = req.params.Naam;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
-    const index = recipes.indexOf(recipe);
-    recipes.splice(index, 1);
-    fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
-    res.redirect("/recipes");
-});
-
-// route for when we want to edit a recipe
-//TODO: zorgen dat de edit pagina alvast de huidige waardes van het recept laat zien
-router.get("/edit/:Naam", (req, res) => {
-    const recipeName = req.params.Naam;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
-    const index = recipes.indexOf(recipe);
-    res.render("recipeAdd.ejs", {recipe});
-});
-router.post("/edit", (req, res) => {
-    const recipeName = req.body.Naam;
-    const updatedRecipe = req.body;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
-    
-    if (!recipe) {
-        return res.status(404).send('Recipe not found');
-    }
-    
-    recipe.Recept = updatedRecipe;
-    fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
-    console.log("Recipe has been updated");
-    
     res.redirect("/recipes");
 });
 
