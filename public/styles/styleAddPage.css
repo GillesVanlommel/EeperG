@@ -17,6 +17,8 @@
     box-sizing: border-box;
 }
 .genericBox {
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
     background-color: var(--accent_kleur_3);
     border-radius: var(--border_radius);
     border: 0.1vh solid var(--accent_kleur_2);
@@ -34,7 +36,7 @@ input:focus {
 body {
     margin: 0px;
     background-image: url("/bg.png");
-    
+    background-attachment:fixed;
 }
 
 /* Specifieke styles*/
@@ -43,8 +45,12 @@ body {
     margin: auto;
     background-color: var(--primaire_kleur);
     width: 85%;
+    border-radius: var(--border_radius);
 }
 #drag_drop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--secundaire_kleur);
     width: 100%;
     border-style:dashed;
@@ -56,14 +62,14 @@ body {
     background-repeat: no-repeat;
 }
 #drag_drop img {
-    height: 20%;
+    height: 50%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 #titleBox {
     width: 100%;
-    height: 6vh;
+    height: 8vh;
 }
 #bottom {
     display: flex;
@@ -71,14 +77,11 @@ body {
     width: 100%;
 }
 #bottomLeft {
-    flex: 0.3;
+    flex: 0.35;
     display: flex;
     flex-direction: column;
-}
-
-#spacer {
-    height: 1px;
-    flex: 0.05;
+    margin-right: 0.5vh;
+    height: min-content;
 }
 
 #ingredBox {
@@ -87,6 +90,7 @@ body {
 }
 #bottomRight {
     flex: 0.65;
+    margin-left: 0.5vh; 
 }
 #tagsBox { 
     display: flex;
@@ -111,9 +115,20 @@ body {
     cursor: pointer;
 }
 .submitBox {
-    background-color: deeppink;
     width: 100%;
-    height: 100px;
+    height: 15vh;
+}
+#submitButton {
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent_kleur_1);
+    border-radius: var(--border_radius);
+    border: none;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4vh;
+    color: var(--tekst_kleur_1);
+    text-shadow: 0.1vh 0.1vh 0.1vh rgb(0,0,0);
+    cursor: pointer;
 }
 
 .step {
@@ -145,6 +160,7 @@ input[type="checkbox"]:checked + #iconButton {
     text-align: center;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 4vh;
+    cursor: pointer;
 }
 
 #persBox {
@@ -152,8 +168,49 @@ input[type="checkbox"]:checked + #iconButton {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 5vh;
+}
+#minusButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: var(--accent_kleur_1);
+    border-radius: var(--border_radius) 0px 0px var(--border_radius);
+    border: none;
+    color: var(--tekst_kleur_1);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4vh;
+    cursor: pointer;
+}
+#plusButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: var(--accent_kleur_1);
+    border-radius: 0px var(--border_radius) var(--border_radius) 0px;
+    border: none;
+    color: var(--tekst_kleur_1);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vh;
+    cursor: pointer;
 }
 
 .ingredient {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    height: 5vh;
+    background-color: var(--secundaire_kleur);
+    border-radius: var(--border_radius);
+    border: 0.2vh solid rgb(0,0,0);
+}
+#separator {
+    height: 100%;
+    width: 0.2vh;
+    background-color: rgb(0,0,0);
 }

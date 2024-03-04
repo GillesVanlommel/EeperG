@@ -16,7 +16,7 @@
         <div id="main">
             <%- include("../partial/dragDrop.ejs") %>
                 <input type="hidden" name="Foto" id="Foto" value="<%= recipe.Recept.Foto %>">
-            <div class="genericBox">
+            <div class="genericBox" id="titleBox">
                 <input type="text" name="Naam" placeholder="Naam" value="<%= recipe.Recept.Naam %>">
                 <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
             </div>
@@ -64,7 +64,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="spacer"></div>
                 <div id="bottomRight">
                     <div id="tagsBox" class="genericBox">
                         <% for (let i = 0; i < tags.length; i++) { %>
@@ -78,15 +77,21 @@
                     </div>
                     <div class="genericBox" , id="stepBox">
                         <button id="stepButton" type="button" onclick="insertStep()">+</button>
-                            <% recipe.Recept.Stappen.forEach(step=> { %>
-                                <div class="step"> <!-- voor edit -->
-                                    <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"
-                                        value="<%= step %>"></input>
-                                </div>
-                            <% }) %>
+                        <% recipe.Recept.Stappen.forEach(step=> { %>
+                            <div class="step"> <!-- voor edit -->
+                                <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap" value="<%= step %>"></input>
+                            </div>
+                        <% }) %>
                         <div class="step"> <!-- zodat er altijd al een lege input staat TODO: hierdoor slaagt die wel een lege string op bij stappe-->
-                            <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap"></input>
+                            <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap" oninput="handleInput(event)"></input>
                         </div>
+                        <script>
+                            function handleInput(event) {
+                                const value = event.target.value;
+                                // Do something with the typed value
+                                console.log(value);
+                            }
+                        </script>
                         <%- include("../partial/insertElements.ejs") %>
                     </div>
                 </div>

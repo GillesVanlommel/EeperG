@@ -3,6 +3,7 @@ const router = express.Router();
 const utils = require("../data/utils.js");
 const bodyParser = require("body-parser");
 const fs = require('fs');
+const { type } = require('os');
 
 // Parse application of wa da ook mag betekenen
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -68,11 +69,13 @@ router.post("/add", (req, res) => {
             "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
         }
     }
-    
+    if (!Array.isArray(req.body.Ingredient)) {
+        newRecipe.Recept.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
+    } else {
     req.body.Ingredient.forEach((ingredient, index) => {
-        console.log(ingredient);
         newRecipe.Recept.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
-    });
+    })};
+
 
     recipes.push(newRecipe);
     
@@ -113,11 +116,12 @@ router.post("/edit", (req, res) => {
         "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
         "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
     };
-    
+    if (!Array.isArray(req.body.Ingredient)) {
+        updatedRecipe.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
+    } else {
     req.body.Ingredient.forEach((ingredient, index) => {
-        console.log(ingredient);
         updatedRecipe.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
-    });
+    })};
 
     if (!recipe) {
         return res.status(404).send('Recipe not found');
