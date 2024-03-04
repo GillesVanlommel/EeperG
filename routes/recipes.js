@@ -46,7 +46,7 @@ router.get("/add", (req, res) => {
                             "Foto": "",
                             "Naam": "",
                             "Prijs": "",
-                            "Personen": "",
+                            "Personen": 1,
                             "Ingredienten": {},
                             "Stappen": [],
                             "tags": {}
@@ -62,7 +62,7 @@ router.post("/add", (req, res) => {
             "Foto": req.body.Foto, //TODO: default fototje in public mss
             "Naam": req.body.Naam || "Naamloos recept",
             "Prijs": req.body.Prijs,
-            "Personen": req.body.Personen || 1,
+            "Personen": parseInt(req.body.Personen) || 1,
             "Ingredienten": {},
             "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
             "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
@@ -108,7 +108,7 @@ router.post("/edit", (req, res) => {
         "Foto": req.body.Foto, //TODO: default fototje in public mss
         "Naam": req.body.Naam || "Naamloos recept",
         "Prijs": req.body.Prijs,
-        "Personen": req.body.Personen || 1,
+        "Personen": parseInt(req.body.Personen) || 1,
         "Ingredienten": {},
         "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
         "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)

@@ -24,7 +24,7 @@
                 <div id="bottomLeft">
                     <div id="persBox" class="genericBox">
                         <button id="minusButton" type="button" onclick="changeValue('minus')">-</button>
-                        <input id="personenInput" type="text" placeholder=1 name="Personen" value="<%= recipe.Recept.Personen %>">
+                        <input id="personenInput" type="text" placeholder=1 name="Personen" value=<%= recipe.Recept.Personen %>>
                         <button id="plusButton" type="button" onclick="changeValue('plus')">+</button>
                     </div>
                     <script>
@@ -35,6 +35,9 @@
                                 input.value = value + 1;
                             } else if (type === 'minus') {
                                 input.value = value - 1;
+                                if (input.value <= 1) {
+                                    input.value = 1;
+                                }
                             }
                         }
                     </script>
@@ -42,7 +45,7 @@
                     <div class="genericBox" id="ingredBox">
                         <button id="stepButton" type="button" onclick="insertIngredient()">+</button>       
                         <% Object.entries(recipe.Recept.Ingredienten).forEach(([key, value]) => { %>
-                            <div class="ingredient">
+                            <div class="ingredient"> <!-- voor edit -->
                                 <div class="ingredientKey">
                                     <input type="text" name="Ingredient" placeholder="Ingredient" value="<%= key %>">
                                 </div>
@@ -51,6 +54,14 @@
                                 </div>
                             </div>
                         <% }) %>
+                        <div class="ingredient">  <!-- zodat er altij ene klaarsta -->
+                            <div class="ingredientKey">
+                                <input type="text" name="Ingredient" placeholder="Ingredient">
+                            </div>
+                            <div class="ingredientValue">
+                                <input type="text" name="Hoeveelheid" placeholder="Hoeveelheid">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="spacer"></div>
