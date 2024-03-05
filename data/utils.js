@@ -21,5 +21,26 @@ const readJson = (filePath) => {
     });
 }
 
+const generateId = (recipeName, ids) => {
+    return new Promise((resolve, reject) => {
+        let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_ -:;,.$";
+        let id = 1;
+        console.log(recipeName)
+        for (let i = 0; i < recipeName.length; i++) {
+            const element = recipeName[i];
+            let number = alphabet.indexOf(element)+1 || 1;
+            id *= number; 
+        }
+        console.log("ids", ids)
+        console.log("id", id)
+        while (ids.includes(id)) {
+            id += 1;
+        }
+        resolve(id);
+    })
+        
+    
+}
 
-module.exports = { readJson };
+
+module.exports = { readJson, generateId };

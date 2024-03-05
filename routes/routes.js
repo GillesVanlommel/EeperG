@@ -9,6 +9,14 @@ const { type } = require('os');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
+// Read in the ID file
+let ids = null;
+utils.readJson("./data/ids.json")
+    .then(data => {
+        ids = data;
+    })
+    .catch(error => console.error(error));
+
 // Read in the JSON file
 let recipes = null;
 utils.readJson("./data/recipes.json")
@@ -59,32 +67,37 @@ router.get("/add", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-    const newRecipe = {
-        "Recept": {
-            "Foto": req.body.Foto, //TODO: default fototje in public mss
-            "Id": generateId(req.body.Naam) || 0, //TODO: da besta nog ni LMAOOOOOOOOOO
-            "Naam": req.body.Naam || "Naamloos recept",
-            "Prijs": req.body.Prijs,
-            "Personen": parseInt(req.body.Personen) || 1,
-            "Ingredienten": {},
-            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
-            "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
-        }
-    }
-    if (!Array.isArray(req.body.Ingredient)) {
-        newRecipe.Recept.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
-    } else {
-    req.body.Ingredient.forEach((ingredient, index) => {
-        newRecipe.Recept.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
-    })};
+    utils.generateId(req.body.Naam, ids)
+        .then(generatedId => {
+            const newRecipe = {
+                "Recept": {
+                    "Foto": req.body.Foto, //TODO: default fototje in public mss
+                    "Id": generatedId || 0, //TODO: da besta nog ni LMAOOOOOOOOOO
+                    "Naam": req.body.Naam || "Naamloos recept",
+                    "Prijs": req.body.Prijs,
+                    "Personen": parseInt(req.body.Personen) || 1,
+                    "Ingredienten": {},
+                    "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
+                    "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
+                }
+            }; 
+        if (!Array.isArray(req.body.Ingredient)) {
+            newRecipe.Recept.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
+        } else {
+        req.body.Ingredient.forEach((ingredient, index) => {
+            newRecipe.Recept.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
+        })};
 
 
-    recipes.push(newRecipe);
-    
-    fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
-    console.log("data has been updated");
-    
-    res.redirect("/recipes")
+        recipes.push(newRecipe);
+        ids.push(generatedId);
+        
+        fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
+        fs.writeFileSync('./data/ids.json', JSON.stringify(ids, null, 2));
+        console.log("data has been updated");
+        
+        res.redirect("/recipes")
+    });
 });
 
 // route for when we want to delete a recipe
