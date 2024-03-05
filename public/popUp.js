@@ -9,6 +9,7 @@ function openPopup(id, name) {
     // set the action of the form to the correct recipe
     const editForm = document.getElementById("editForm");
     if (editForm){
+        console.log(name);
         editForm.action = "/recipes/edit/" + name;
     }
 }

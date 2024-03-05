@@ -10,7 +10,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
 // Middleware voor wnr er een path komt da begint met "/recipes" in dat geval wordt deze js gebruikt. 
-const recipesRoute = require('./routes/recipes.js');
+const recipesRoute = require('./routes/routes.js');
 app.use('/recipes', recipesRoute);
 
 // Start op deze route

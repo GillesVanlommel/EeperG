@@ -45,6 +45,7 @@ router.get('/', (req, res) => {
 router.get("/add", (req, res) => {
     res.locals.recipe = {"Recept": {
                             "Foto": "",
+                            'Id': 0,
                             "Naam": "",
                             "Prijs": "",
                             "Personen": 1,
@@ -61,6 +62,7 @@ router.post("/add", (req, res) => {
     const newRecipe = {
         "Recept": {
             "Foto": req.body.Foto, //TODO: default fototje in public mss
+            "Id": generateId(req.body.Naam) || 0, //TODO: da besta nog ni LMAOOOOOOOOOO
             "Naam": req.body.Naam || "Naamloos recept",
             "Prijs": req.body.Prijs,
             "Personen": parseInt(req.body.Personen) || 1,
@@ -109,19 +111,23 @@ router.post("/edit", (req, res) => {
     const recipe = recipes.find(r => r.Recept.Naam === recipeName);
     const updatedRecipe = {
         "Foto": req.body.Foto, //TODO: default fototje in public mss
+        "Id": generateId(req.body.Naam) || 0, //TODO: da besta nog ni LMAOOOOOOOOOO
         "Naam": req.body.Naam || "Naamloos recept",
         "Prijs": req.body.Prijs,
         "Personen": parseInt(req.body.Personen) || 1,
         "Ingredienten": {},
-        "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
+        "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //Stappen als isarray anders in array steken
         "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
     };
+    console.log(req.body.Ingredient.key);
     if (!Array.isArray(req.body.Ingredient)) {
-        updatedRecipe.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
+        console.log(req.body)
+        updatedRecipe.Ingredienten[req.body.Ingredient] = req.body.Hoeveelheid; 
     } else {
     req.body.Ingredient.forEach((ingredient, index) => {
         updatedRecipe.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
-    })};
+    }
+    )};
 
     if (!recipe) {
         return res.status(404).send('Recipe not found');
