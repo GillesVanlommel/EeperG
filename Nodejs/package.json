@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
+    "build": "netlify deploy --prod"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +16,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
-  },
-  {
-  "scripts": {
-    "build": "netlify deploy --prod"
   }
 }
