@@ -15,5 +15,9 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
+  },
+  {
+  "scripts": {
+    "build": "netlify deploy --prod"
   }
 }
