@@ -11,10 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.19.2",
-    "netlify-cli": "^17.26.3",
-    "netlify-lambda": "^2.0.16",
-    "serverless-http": "^3.2.0"
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
