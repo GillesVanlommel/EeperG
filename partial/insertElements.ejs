@@ -1,0 +1,48 @@
+<!-- Deze code voegt een element structuur toe in een div, gebruikt door stepBox en ingredBox -->
+
+<script>
+    function insertStep() {
+        const element = document.getElementById('stepBox');
+
+        const newStep = document.createElement('div');
+        newStep.className = 'step';
+
+        const newInput = document.createElement('input');
+        newInput.type = 'text';
+        newInput.name = 'Stappen';
+        newInput.placeholder = 'Typ hier een nieuwe stap';
+        
+        newStep.appendChild(newInput);
+        element.appendChild(newStep);
+    }
+
+
+    function insertIngredient() {
+        const element = document.getElementById("ingredBox");
+
+        const newIngredient = document.createElement("div");
+        newIngredient.className = "ingredient";
+
+        const newIngredientKey = document.createElement("div");
+        newIngredientKey.className = "ingredientKey";
+
+        const newIngredientValue = document.createElement("div");
+        newIngredientValue.className = "ingredientValue";
+
+        const newInputKey = document.createElement("input");
+        newInputKey.type = "text";
+        newInputKey.name = "Ingredient";
+        newInputKey.placeholder = "Ingredient";
+
+        const newInputValue = document.createElement("input");
+        newInputValue.type = "text";
+        newInputValue.name = "Hoeveelheid";
+        newInputValue.placeholder = "Hoeveelheid";
+
+        newIngredientKey.appendChild(newInputKey);
+        newIngredientValue.appendChild(newInputValue);
+        newIngredient.appendChild(newIngredientKey);
+        newIngredient.appendChild(newIngredientValue);
+        element.appendChild(newIngredient);
+    }
+</script>

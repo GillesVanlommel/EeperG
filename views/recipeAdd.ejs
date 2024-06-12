@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styleAddPage.css">
+    <title>Add recipe</title>
+</head>
+<!-- TODO: editen werkt vanaf nu. 
+    1. Toevoegen van een foto werkt niet. ik denk da ik iets kapot heb gemaakt want er crasht iets in de js nu
+    2. Tags werken nog niet dus als je nu edit dan verwijdert die de huidige tags uit de lijst waardoor website crasht want "tags": ... staat ni meer in de json voor da recept-->
+<!-- TODO: tags werken nu wel maar ik heb edit kapot gemaakt lmao -->
+<body>
+    <form action="<%= recipe.Recept.Naam !== '' ? '/recipes/edit' : '/recipes/add' %>" method="post">
+        <div id="main">
+            <%- include("../partial/dragDrop.ejs") %>
+                <input type="hidden" name="Foto" id="Foto" value="<%= recipe.Recept.Foto %>">
+            <div class="genericBox" id="titleBox">
+                <input type="text" name="Naam" placeholder="Naam" value="<%= recipe.Recept.Naam %>">
+                <input type="text" name="Prijs" placeholder="Prijs" value="<%= recipe.Recept.Prijs %>">
+            </div>
+            <div id="bottom">
+                <div id="bottomLeft">
+                    <div id="persBox" class="genericBox">
+                        <button id="minusButton" type="button" onclick="changeValue('minus')">-</button>
+                        <input id="personenInput" type="text" placeholder=1 name="Personen" value=<%= recipe.Recept.Personen %>>
+                        <button id="plusButton" type="button" onclick="changeValue('plus')">+</button>
+                    </div>
+                    <%- include("../partial/changeValue.ejs") %>
+
+                    <div class="genericBox" id="ingredBox">
+                        <button id="stepButton" type="button" onclick="insertIngredient()">+</button>       
+                        <% Object.entries(recipe.Recept.Ingredienten).forEach(([key, value]) => { %>
+                            <div class="ingredient"> <!-- voor edit -->
+                                <div class="ingredientKey">
+                                    <input type="text" name="Ingredient" placeholder="Ingredient" value="<%= key %>">
+                                </div>
+                                <div class="ingredientValue">
+                                    <input type="text" name="Hoeveelheid" placeholder="Hoeveelheid" value="<%= value %>">
+                                </div>
+                            </div>
+                        <% }) %>
+                        <div class="ingredient">  <!-- zodat er altij ene klaarsta -->
+                            <div class="ingredientKey">
+                                <input type="text" name="Ingredient" placeholder="Ingredient">
+                            </div>
+                            <div class="ingredientValue">
+                                <input type="text" name="Hoeveelheid" placeholder="Hoeveelheid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottomRight">
+                    <div id="tagsBox" class="genericBox">
+                        <% for (let i = 0; i < tags.length; i++) { %>
+                            <% const tag = tags[i]; %>
+                            <% const isChecked = recipe.Recept.tags && recipe.Recept.tags[tag] ? 'checked' : ''; %>
+                            <input type="checkbox" id="cbInput<%= i + 1 %>" name="CB[<%= tag %>]" <%= isChecked %> />
+                            <label for="cbInput<%= i + 1 %>" id="iconButton">
+                                <img src="/icons/<%= tag %>.png" title="<%= tag %>" id="icon" />
+                            </label>
+                        <% } %>
+                    </div>
+                    <div class="genericBox" , id="stepBox">
+                        <button id="stepButton" type="button" onclick="insertStep()">+</button>
+                        <% recipe.Recept.Stappen.forEach(step=> { %>
+                            <div class="step"> <!-- voor edit -->
+                                <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap" value="<%= step %>"></input>
+                            </div>
+                        <% }) %>
+                        <div class="step"> <!-- zodat er altijd al een lege input staat TODO: hierdoor slaagt die wel een lege string op bij stappe-->
+                            <input type="text" name="Stappen" placeholder="Typ hier een nieuwe stap" oninput="handleInput(event)"></input>
+                        </div>
+                        <script>
+                            function handleInput(event) {
+                                const value = event.target.value;
+                                // Do something with the typed value
+                                console.log(value);
+                            }
+                        </script>
+                        <%- include("../partial/insertElements.ejs") %>
+                    </div>
+                </div>
+            </div>
+            <div class="genericBox" id="submitBox">
+                <button id="submitButton">Opslaan</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

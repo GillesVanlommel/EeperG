@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styleDetailPage.css">
+  <script src="/popUp.js"></script>
+  <title>
+    <%= recept.Naam %>
+  </title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="top">
+      <img src="<%=recept.Foto %>" alt="">
+      <a href="/recipes">Back</a>
+      <div class="fadebox"></div>
+    </div>
+
+
+
+    <div class="infobox">
+      <div class="tagsbox">
+          <% for (const tag of tags) { %>
+            <% if (recept.tags.hasOwnProperty(tag)) { %>
+              <div id="separator"><img src="/icons/<%= tag %>.png" title="<%= tag.charAt(0).toUpperCase() + tag.slice(1) %>" id="icon"></div>
+            <% } %>
+          <% } %>
+        </div>
+
+      <div class="sharebox">
+        <div id="separator"><img src="/icons/edit.png" onclick="openPopup('edit-container', '<%=recept.Naam %>')" id="icon" title="Bewerken"></div>
+        <div id="separator"><img src="/icons/delen.png" onclick="openPopup('delete-container', '<%=recept.Naam %>')" id="icon" title="Delen"></div>
+      </div>
+    </div>
+
+
+
+
+    <div class="bottom">
+      <div class="ingredientbox">
+        <div class="ingrBox" style="border-bottom: 2px solid rgb(71, 70, 70);">
+          <div class="ingrAmount"><strong>#</strong></div>
+          <div class="ingrName"><strong>Ingrediënt</strong></div>
+        </div>
+        <% for (const key in recept.Ingredienten) { %>
+          <div class="ingrBox">
+            <div class="ingrAmount">
+              <%= recept.Ingredienten[key] %>
+            </div>
+            <div class="ingrName">
+              <%= key %>
+            </div>
+          </div>
+          <% } %>
+      </div>
+      <div class="stepsbox">
+        <div>
+          <span class="stepTitle">
+            <u>
+              <%= recept.Naam %>
+            </u>
+          </span>
+        </div>
+        <ol class="stepList" style="margin-bottom: 10px;">
+          <% recept.Stappen.forEach(step=> { %>
+            <li class="step">
+              <%= step %>
+            </li>
+            <% }); %>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!-- PopUps -->
+  <%- include("../partial/sharePopUp.ejs") %>
+  <%- include("../partial/editPopUp.ejs") %>
+</body>
+</html>

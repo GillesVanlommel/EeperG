@@ -1,0 +1,119 @@
+:root {
+    --primaire_kleur: rgb(255, 255, 255, 1);
+    --secundaire_kleur: rgb(236, 236, 236);
+    --accent_kleur_1: rgb(66, 214, 101);
+    --accent_kleur_2: rgb(220, 216, 216);
+    --accent_kleur_3: rgba(0, 0, 0, 0);
+    --accent_kleur_4: rgb(0, 0, 0);
+    --tekst_kleur_1: rgb(255, 255, 255);
+    --tekst_kleur_2: rgb(90, 90, 90);
+    --tile_width: 15vw;
+    --tile_height: 20vw;
+    --icon_size: 1vw;
+    --font_size: 1.5vw;
+    --corner_radius: calc(var(--tile_width)*5/100);
+  }
+
+body {
+    margin: 0vh;
+    color: white;
+    justify-content: center;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+}
+.gridContainer {
+    justify-content: center;
+    min-height: 100vh;
+    height: fit-content;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(5,var(--tile_width));
+    grid-auto-rows: var(--tile_height);
+    grid-gap: 3vh;
+}
+.topBar {
+    font-family: 'Times New Roman', Times, serif;
+    color:var(--accent_kleur_4);
+    background-color: var(--primaire_kleur);
+    border-bottom: 4px solid var(--secundaire_kleur);
+    box-shadow: 0 0 0 2px var(--accent_kleur_1);
+    height: 8vh;
+    width: 100%;
+    display: flex;
+}
+.zoekBalk {
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    flex: 0.7;
+}
+.filter {
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    flex: 0.3;
+}
+#dropdown {
+    width: 80%;
+    border-radius: 5px;
+    border: 2px solid var(--secundaire_kleur);
+    background-color: var(--primaire_kleur);
+    color: var(--tekst_kleur_2);
+    font-size: 16px;
+  }
+.receptTile {
+    background-color: var(--secundaire_kleur);
+    border-radius: var(--corner_radius);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.receptImg {
+    padding-bottom: calc(var(--tile_width)*5/100);
+    padding-top: calc(var(--tile_width)*5/100);
+    border-bottom: 3px solid var(--accent_kleur_2);
+    margin: auto;
+    height: 55%;
+    width: 90%;
+}
+.receptImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--corner_radius);
+}
+.receptName {
+    border-radius: 0vh 0vh var(--corner_radius) var(--corner_radius);
+    height: 35%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--font_size);
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--tekst_kleur_2)
+}
+.editbox {
+    text-align: center;
+    height: 10%;
+}
+#icon {
+    width: var(--icon_size);
+    height: var(--icon_size);
+}
+.addTile {
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: calc(var(--font_size)*3);
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--accent_kleur_1);   
+    cursor: pointer;
+}
