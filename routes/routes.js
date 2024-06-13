@@ -44,9 +44,16 @@ const tags = [
     ]
 
 // Base route for /recipe/
-router.get('/', (req, res) => {
-    res.locals.recipes = recipes;
-    res.render('recipeList.ejs');
+router.post('/', (req, res) => {
+    console.log(req.body);
+    const submittedPassword = req.body.password;
+    const correctPassword = "bigbootybitches";
+    if (submittedPassword === correctPassword) {
+        res.locals.recipes = recipes;
+        res.render('recipeList.ejs');
+    } else {
+        res.status(401).send("Unauthorized");
+    }
 });
 
 // route for when we want to add a recipe
