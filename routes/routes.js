@@ -47,7 +47,7 @@ const tags = [
 router.get("/", (req, res) => {
     res.locals.recipes = recipes;
     res.render("recipeList.ejs");
-})
+});
 router.post('/verifyPassword', (req, res) => {
     console.log(req.body);
     const submittedPassword = req.body.password;
