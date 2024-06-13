@@ -45,6 +45,7 @@ const tags = [
 
 // Base route for /recipe/
 router.get("/", (req, res) => {
+    res.locals.recipes = recipes;
     res.render("recipeList.ejs");
 })
 router.post('/verifyPassword', (req, res) => {
