@@ -44,7 +44,10 @@ const tags = [
     ]
 
 // Base route for /recipe/
-router.post('/', (req, res) => {
+router.get("/", (req, res) => {
+    res.render("recipeList.ejs");
+})
+router.post('/verifyPassword', (req, res) => {
     console.log(req.body);
     const submittedPassword = req.body.password;
     const correctPassword = "bigbootybitches";
