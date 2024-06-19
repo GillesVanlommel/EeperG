@@ -7,13 +7,19 @@
     --accent_kleur_4: rgb(0, 0, 0);
     --tekst_kleur_1: rgb(255, 255, 255);
     --tekst_kleur_2: rgb(90, 90, 90);
-    --tile_width: 15vw;
+    --tile_width_min: 250px;
+    --tile_width_max: 15vw;
     --tile_height: 20vw;
     --icon_size: 1vw;
     --font_size: 1.5vw;
-    --corner_radius: calc(var(--tile_width)*5/100);
+    --corner_radius: 5%;
   }
-
+@media (max-width: 600px) {
+    :root {
+        --tile_height: 50vh; 
+        --font_size: 5vw;
+    }
+}
 body {
     margin: 0vh;
     color: white;
@@ -24,16 +30,6 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 3vh;
-}
-.gridContainer {
-    justify-content: center;
-    min-height: 100vh;
-    height: fit-content;
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(5,var(--tile_width));
-    grid-auto-rows: var(--tile_height);
-    grid-gap: 3vh;
 }
 .topBar {
     font-family: 'Times New Roman', Times, serif;
@@ -64,18 +60,27 @@ body {
     background-color: var(--primaire_kleur);
     color: var(--tekst_kleur_2);
     font-size: 16px;
-  }
+}
+.gridContainer {
+    justify-content: center;
+    min-height: 100vh;
+    height: fit-content;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--tile_width_min), var(--tile_width_max)));
+    grid-auto-rows: var(--tile_height);
+    grid-gap: 3vh;
+}
 .receptTile {
     background-color: var(--secundaire_kleur);
     border-radius: var(--corner_radius);
     height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
 }
 .receptImg {
-    padding-bottom: calc(var(--tile_width)*5/100);
-    padding-top: calc(var(--tile_width)*5/100);
+    padding-bottom: 5%;
+    padding-top: 5%;
     border-bottom: 3px solid var(--accent_kleur_2);
     margin: auto;
     height: 55%;

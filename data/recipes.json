@@ -267,29 +267,5 @@
         "zwaveldioxide": "on"
       }
     }
-  },
-  {
-    "Recept": {
-      "Foto": "",
-      "Id": 7752,
-      "Naam": "fdsq",
-      "Prijs": "",
-      "Personen": 1,
-      "Ingredienten": {},
-      "Stappen": [],
-      "tags": {}
-    }
-  },
-  {
-    "Recept": {
-      "Foto": "",
-      "Id": 7753,
-      "Naam": "fqsd",
-      "Prijs": "",
-      "Personen": 1,
-      "Ingredienten": {},
-      "Stappen": [],
-      "tags": {}
-    }
   }
 ]
