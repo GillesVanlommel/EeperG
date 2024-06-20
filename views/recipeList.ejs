@@ -19,6 +19,11 @@
     <div class="zoekBalk"> 
       <%- include("../partial/searchBar.ejs") %>
     </div>
+    <div id="downloadBox">
+      <a id="download" href='#' onclick="downloadJSON()">
+        Download
+      </a>
+    </div>
     <div class="filter">
       <select id="dropdown" onchange="filterAndLoad(event)">
         <option value="alle">Alle</option>

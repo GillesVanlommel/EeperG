@@ -1,4 +1,3 @@
 # List of all found bugs
-1. Wanneer je stappen aan het toevoegen bent en voegt nog een stap toe verwijderd die al je vorige stappen.
-2. Image icon in het toevoeg scherm is ni gecentreerd
-3. Fiks download knop zoda het echt gebruikt kan worden
+1. Zorg da je images kunt toevoegen me een ctrl+V
+1. Zorg da de receptenDetails page er ook goe uitziet op gsm

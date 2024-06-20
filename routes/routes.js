@@ -4,18 +4,12 @@ const utils = require("../data/utils.js");
 const bodyParser = require("body-parser");
 const fs = require('fs');
 const { type } = require('os');
+const { v4: uuid } = require('uuid');
+
 
 // Parse application of wa da ook mag betekenen
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
-
-// Read in the ID file
-let ids = null;
-utils.readJson("./data/ids.json")
-    .then(data => {
-        ids = data;
-    })
-    .catch(error => console.error(error));
 
 // Read in the JSON file
 let recipes = null;
@@ -78,37 +72,32 @@ router.get("/add", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-    utils.generateId(req.body.Naam, ids)
-        .then(generatedId => {
-            const newRecipe = {
-                "Recept": {
-                    "Foto": req.body.Foto, //TODO: default fototje in public mss
-                    "Id": generatedId || 0, //TODO: da besta nog ni LMAOOOOOOOOOO
-                    "Naam": req.body.Naam || "Naamloos recept",
-                    "Prijs": req.body.Prijs,
-                    "Personen": parseInt(req.body.Personen) || 1,
-                    "Ingredienten": {},
-                    "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
-                    "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
-                }
-            }; 
-        if (!Array.isArray(req.body.Ingredient)) {
-            newRecipe.Recept.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
-        } else {
-        req.body.Ingredient.forEach((ingredient, index) => {
-            newRecipe.Recept.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
-        })};
+    const newRecipe = {
+        "Recept": {
+            "Foto": req.body.Foto || "/icons/image.png",
+            "Id": uuid(),
+            "Naam": req.body.Naam || "Naamloos recept",
+            "Prijs": req.body.Prijs,
+            "Personen": parseInt(req.body.Personen) || 1,
+            "Ingredienten": {},
+            "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //copilot code
+            "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
+        }
+    }; 
+    if (!Array.isArray(req.body.Ingredient)) {
+        newRecipe.Recept.Ingredienten[req.body.Ingredient.key] = req.body.Ingredient.value; 
+    } else {
+    req.body.Ingredient.forEach((ingredient, index) => {
+        newRecipe.Recept.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
+    })};
 
 
-        recipes.push(newRecipe);
-        ids.push(generatedId);
-        
-        fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
-        fs.writeFileSync('./data/ids.json', JSON.stringify(ids, null, 2));
-        console.log("data has been updated");
-        
-        res.redirect("/recipes")
-    });
+    recipes.push(newRecipe);
+    
+    fs.writeFileSync('./data/recipes.json', JSON.stringify(recipes, null, 2));
+    console.log("data has been updated");
+    
+    res.redirect("/recipes")
 });
 
 // route for when we want to delete a recipe
@@ -122,20 +111,22 @@ router.post("/delete/:Naam", (req, res) => {
 });
 
 // route for when we want to edit a recipe
-router.get("/edit/:Naam", (req, res) => {
-    const recipeName = req.params.Naam;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
+router.get("/edit/:Id", (req, res) => {
+    const recipeId = req.params.Id;
+    const recipe = recipes.find(r => r.Recept.Id === recipeId);
+    console.log(recipe);
+    console.log(recipeId);
     const index = recipes.indexOf(recipe);
     res.locals.recipe = recipe;
     res.locals.tags = tags;
     res.render("recipeAdd.ejs");
 });
 router.post("/edit", (req, res) => {
-    const recipeName = req.body.Naam;
-    const recipe = recipes.find(r => r.Recept.Naam === recipeName);
+    const recipeId = req.body.Id;
+    const recipe = recipes.find(r => r.Recept.Id === recipeId);
     const updatedRecipe = {
-        "Foto": req.body.Foto, //TODO: default fototje in public mss
-        "Id": generateId(req.body.Naam) || 0, //TODO: da besta nog ni LMAOOOOOOOOOO
+        "Foto": req.body.Foto || "/icons/image.png",
+        "Id": req.body.Id,
         "Naam": req.body.Naam || "Naamloos recept",
         "Prijs": req.body.Prijs,
         "Personen": parseInt(req.body.Personen) || 1,

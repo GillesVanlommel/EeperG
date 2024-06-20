@@ -29,7 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 10vh;
 }
 .topBar {
     font-family: 'Times New Roman', Times, serif;
@@ -40,12 +40,29 @@ body {
     height: 8vh;
     width: 100%;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .zoekBalk {
     display: flex;
     align-items: center;
     padding-left: 5vw;
     flex: 0.7;
+}
+#downloadBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#download {
+    border: 2px solid var(--secundaire_kleur);
+    border-radius: var(--corner_radius);
+    padding: 10px;
+    cursor: pointer;
+    color: var(--tekst_kleur_2);
+    text-decoration: none;
 }
 .filter {
     display: flex;
@@ -54,6 +71,7 @@ body {
     flex: 0.3;
 }
 #dropdown {
+    cursor: pointer;
     width: 80%;
     border-radius: 5px;
     border: 2px solid var(--secundaire_kleur);

@@ -18,10 +18,10 @@ function filterAndLoad(event) {
             </div>
             <div class="editbox">
                 <img src="/icons/edit.png"
-                    onclick="openPopup('edit-container', '${recipe.Recept.Naam}'); event.stopPropagation()" id="icon"
+                    onclick="openPopup('edit-container', '${recipe.Recept.Id}'); event.stopPropagation()" id="icon"
                     title="Bewerken">
                 <img src="/icons/trash.png"
-                    onclick="openPopup('delete-container', '${recipe.Recept.Naam}'); event.stopPropagation()" id="icon"
+                    onclick="openPopup('delete-container', '${recipe.Recept.Id}'); event.stopPropagation()" id="icon"
                     title="Verwijder">
             </div>
         </div>`;
@@ -31,4 +31,16 @@ function filterAndLoad(event) {
             <div class="addTile" onclick="window.location.href = '/recipes/add'">
                 <p>+</p>
             </div>`;
+}
+
+function downloadJSON(){
+    const data  = JSON.stringify(recipes);
+    const blob = new Blob([data], {type: 'application/json'});
+    const url  = URL.createObjectURL(blob);
+    const a = document.getElementById('download');
+    a.href = url
+    a.download = 'recipes.json';
+    a.click();
+    console.log("Downloaded JSON");
+    setTimeout(() => URL.revokeObjectURL(url));
 }
