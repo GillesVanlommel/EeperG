@@ -27,11 +27,10 @@
     <div class="filter">
       <select id="dropdown" onchange="filterAndLoad(event)">
         <option value="alle">Alle</option>
-        <option value="vegan">Vegan</option>
-        <option value="hoofdgerecht">Hoofdgerechten</option>
-        <option value="voorgerecht">Voorgerechten</option>
-        <option value="desert">Deserts</option>
-        <option value="...">...</option>
+        <% const uniquePersoon = [...new Set(recipes.map(recipe => recipe.Recept.Persoon))]; %>
+        <% uniquePersoon.forEach(persoon => { %>
+          <option value="<%= persoon %>"><%= persoon %></option>
+        <% }); %>
       </select>
     </div>
   </div>

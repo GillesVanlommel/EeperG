@@ -1,4 +1,4 @@
-<div id="drag_drop" ondrop="dropped(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)"
+<div id="drag_drop" ondrop="dropped(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)" onpaste="pasteHandler(event)"
     style="background-image: url('<%= recipe.Recept.Foto %>');">
     <img src="<%= recipe.Recept.Naam !== '' ? '' : '/icons/image.png'%>">
 </div>
@@ -34,6 +34,24 @@
     function dragLeaveHandler(event) {
         const dropZone = document.getElementById('imgBox');
         dropZone.classList.remove('dragover'); //verwijder die class terug
+    }
+    function pasteHandler(event) {
+        event.preventDefault();
+        console.log(event.clipboardData.getData('text'));
+        var pasteData = event.clipboardData.getData('text');
+        if (pasteData.startsWith('http://') || pasteData.startsWith('https://')) {
+            var img = new Image();
+            img.onload = function() {
+                const dropzone = document.getElementById('drag_drop');
+                dropzone.style.backgroundImage = `url('${pasteData}')`;
+                dropzone.textContent = '';
+                document.getElementById("Foto").value = pasteData;
+            };
+            img.onerror = function() {
+                alert('Ulle ma hahaha');
+            };
+            img.src = pasteData;
+        }
     }
 </script>
 <style>

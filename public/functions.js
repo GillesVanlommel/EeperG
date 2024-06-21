@@ -3,6 +3,12 @@ function filterAndLoad(event) {
     
     filteredRecipes = recipes.filter(recipe =>
         recipe.Recept.tags[filterValue] === "on" || filterValue === "alle");
+    personRecipes = recipes.filter(recipe =>
+        recipe.Recept.Persoon.toLowerCase() === filterValue.toLowerCase());
+    filteredRecipes = filteredRecipes.concat(personRecipes);
+    loadRecipes(filteredRecipes);
+}
+function loadRecipes() {
     // Clear the current tiles
     const gridContainer = document.getElementById("gridContainer");
     gridContainer.innerHTML = "";

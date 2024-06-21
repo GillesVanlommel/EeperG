@@ -131,8 +131,9 @@ router.post("/edit", (req, res) => {
         "Prijs": req.body.Prijs,
         "Personen": parseInt(req.body.Personen) || 1,
         "Ingredienten": {},
-        "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen : [req.body.Stappen] : [], //Stappen als isarray anders in array steken
-        "tags": req.body.CB || {} //CB is een dict die alle checkboxes bevat (zie recipeAdd.ejs)
+        "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen.filter(step => step !== "") : [req.body.Stappen] : [],
+        "tags": req.body.CB || {},
+        "Persoon": req.body.Persoon
     };
     console.log(req.body.Ingredient.key);
     if (!Array.isArray(req.body.Ingredient)) {
@@ -140,7 +141,9 @@ router.post("/edit", (req, res) => {
         updatedRecipe.Ingredienten[req.body.Ingredient] = req.body.Hoeveelheid; 
     } else {
     req.body.Ingredient.forEach((ingredient, index) => {
-        updatedRecipe.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
+        if (ingredient !== "") {
+            updatedRecipe.Ingredienten[ingredient] = req.body.Hoeveelheid[index];
+        }
     }
     )};
 
