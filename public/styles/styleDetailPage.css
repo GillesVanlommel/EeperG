@@ -74,6 +74,7 @@ body {
 #share_icon {
     width: var(--icon_size);
     margin-right: 5%;
+    cursor: pointer;
 }
 /* Div bevat alle tags */
 .tagsbox {

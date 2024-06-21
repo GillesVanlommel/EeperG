@@ -1,14 +1,15 @@
 function filterAndLoad(event) {
     const filterValue = event.target.value;
-    
-    filteredRecipes = recipes.filter(recipe =>
-        recipe.Recept.tags[filterValue] === "on" || filterValue === "alle");
-    personRecipes = recipes.filter(recipe =>
-        recipe.Recept.Persoon.toLowerCase() === filterValue.toLowerCase());
-    filteredRecipes = filteredRecipes.concat(personRecipes);
-    loadRecipes(filteredRecipes);
+    let personRecipes = [];
+    if (filterValue === "Alle") {
+        personRecipes = recipes;;
+    } else {
+        personRecipes = recipes.filter(recipe =>
+            recipe.Recept.Persoon.map(Persoon => Persoon.toLowerCase()).includes(filterValue.toLowerCase()));
+    }
+    loadRecipes(personRecipes);
 }
-function loadRecipes() {
+function loadRecipes(filteredRecipes) {
     // Clear the current tiles
     const gridContainer = document.getElementById("gridContainer");
     gridContainer.innerHTML = "";

@@ -26,10 +26,12 @@
     </div>
     <div class="filter">
       <select id="dropdown" onchange="filterAndLoad(event)">
-        <option value="alle">Alle</option>
-        <% const uniquePersoon = [...new Set(recipes.map(recipe => recipe.Recept.Persoon))]; %>
+        <option value="Alle">Alle</option>
+        <% const uniquePersoon = [...new Set(recipes.flatMap(recipe => 
+        (Array.isArray(recipe.Recept.Persoon) ? recipe.Recept.Persoon : [recipe.Recept.Persoon.toString()])
+        .map(persoon => persoon.toLowerCase().replace(/\s/g, ''))))]; %>
         <% uniquePersoon.forEach(persoon => { %>
-          <option value="<%= persoon %>"><%= persoon %></option>
+        <option value="<%= persoon %>"><%= persoon %></option>
         <% }); %>
       </select>
     </div>

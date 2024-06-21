@@ -133,8 +133,7 @@ router.post("/edit", (req, res) => {
         "Ingredienten": {},
         "Stappen": req.body.Stappen ? Array.isArray(req.body.Stappen) ? req.body.Stappen.filter(step => step !== "") : [req.body.Stappen] : [],
         "tags": req.body.CB || {},
-        "Persoon": req.body.Persoon
-    };
+        "Persoon": typeof req.body.Persoon === 'string' ? req.body.Persoon.split(',') : Array.isArray(req.body.Persoon) ? req.body.Persoon : [req.body.Persoon]    };
     console.log(req.body.Ingredient.key);
     if (!Array.isArray(req.body.Ingredient)) {
         console.log(req.body)
