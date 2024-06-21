@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styleListPage.css">
   <link rel="stylesheet" href="/styles/styleDetailPage.css">
   <script src="/popUp.js"></script>
   <title>
@@ -26,14 +27,14 @@
       <div class="tagsbox">
           <% for (const tag of tags) { %>
             <% if (recept.tags.hasOwnProperty(tag)) { %>
-              <div id="separator"><img src="/icons/<%= tag %>.png" title="<%= tag.charAt(0).toUpperCase() + tag.slice(1) %>" id="icon"></div>
+              <img src="/icons/<%= tag %>.png" title="<%= tag.charAt(0).toUpperCase() + tag.slice(1) %>" id="icon">
             <% } %>
           <% } %>
         </div>
 
       <div class="sharebox">
-        <div id="separator"><img src="/icons/edit.png" onclick="openPopup('edit-container', '<%=recept.Id %>')" id="icon" title="Bewerken"></div>
-        <div id="separator"><img src="/icons/delen.png" onclick="openPopup('delete-container', '<%=recept.Id %>')" id="icon" title="Delen"></div>
+        <img src="/icons/edit.png" onclick="openPopup('edit-container', '<%=recept.Id %>')" id="share_icon" title="Bewerken">
+        <img src="/icons/delen.png" onclick="openPopup('delete-container', '<%=recept.Id %>')" id="share_icon" title="Delen">
       </div>
     </div>
 
