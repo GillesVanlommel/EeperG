@@ -5,7 +5,7 @@ function filterAndLoad(event) {
         personRecipes = recipes;;
     } else {
         personRecipes = recipes.filter(recipe =>
-            recipe.Recept.Persoon.map(Persoon => Persoon.toLowerCase()).includes(filterValue.toLowerCase()));
+            recipe.Recept.Persoon.map(Persoon => Persoon.toLowerCase().replace(/\s/g, "")).includes(filterValue.toLowerCase().replace(/\s/g, "")));
     }
     loadRecipes(personRecipes);
 }
